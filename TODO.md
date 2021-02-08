@@ -1,3 +1,5 @@
-- Criar função sass para converter cor em rgb (ionic)
-- usar npm scripts invés de gulp
+- instalar storybook
+- instalar plugin figma
+- documentar:
+    - functions
 - pegar browserlist com brunão

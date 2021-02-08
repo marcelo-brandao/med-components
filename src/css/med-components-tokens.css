@@ -228,9 +228,3 @@
   --med-shadow-level-8: 0 12px 17px rgba(0, 0, 0, 0.14), 0 5px 22px rgba(0, 0, 0, 0.12), 0 7px 8px rgba(0, 0, 0, 0.2);
   --med-shadow-level-9: 0 16px 24px rgba(0, 0, 0, 0.14), 0 6px 30px rgba(0, 0, 0, 0.12), 0 8px 10px rgba(0, 0, 0, 0.2);
   --med-shadow-level-10: 0 24px 38px rgba(0, 0, 0, 0.14), 0 9px 46px rgba(0, 0, 0, 0.12), 0 11px 15px rgba(0, 0, 0, 0.2); }
-
-@keyframes mymove {
-  from {
-    top: 0px; }
-  to {
-    top: 200px; } }

@@ -1,2 +1,6 @@
-@import './abstracts/functions';
-@import './abstracts/variables';
+@import './global/functions';
+@import './global/variables';
+
+@import './med-components-tokens';
+
+@import './med-components-grid';

@@ -6,21 +6,33 @@
 npm install
 ```
 
-## Build
+## Utilização
 
-```bash
-npm run build
+### med-components
+
+Para utilizar a biblioteca completa basta importar `med-components.scss`:
+
+```scss
+@import './node_modules/@mbrandao/med-components/src/scss/med-components.scss'
 ```
 
-## VS Code Extensions
+**Conteudo:**
 
-Extensões necessárias para garantir o uso adequado das metodologias e guias de estilo. Eles também integram os linters com VS Code habilitar lint ao salvar.
+- tokens
+- grid
 
-- **[EditorConfig for VS Code](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig)**
-- **[Prettier - Code formatter](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)**
-- **[stylelint](https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint)**
+### med-components-tokens
 
-Extensões úteis para otimizar o desenvolvimento.
+Para utilizar apenas os tokens basta importar **`med-components-tokens.scss`**:
 
-- **[Auto Rename Tag](https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-rename-tag)**
-- **[Material Icon Theme](https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme)**
+```scss
+@import './node_modules/@mbrandao/med-components/src/scss/med-components-tokens.scss'
+```
+
+### med-components-grid
+
+Para utilizar apenas a grid basta importar `med-components-grid.scss`:
+
+```scss
+@import './node_modules/@mbrandao/med-components/src/scss/med-components-grid.scss'
+```
