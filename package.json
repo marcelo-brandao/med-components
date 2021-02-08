@@ -2,7 +2,7 @@
   "name": "@mbrandao/med-components",
   "version": "1.0.0",
   "description": "",
-  "main": "",
+  "main": "index.js",
   "scripts": {
     "build": "node-sass --output-style 'compressed' src/scss/ -o src/css/ && npx postcss src/css/*.css -u autoprefixer -d dist/"
   },
@@ -13,5 +13,13 @@
     "autoprefixer": "^10.2.4",
     "postcss": "^8.2.5",
     "postcss-cli": "^8.3.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marcelo-brandao/med-components.git"
+  },
+  "bugs": {
+    "url": "https://github.com/marcelo-brandao/med-components/issues"
+  },
+  "homepage": "https://github.com/marcelo-brandao/med-components#readme"
 }
