@@ -4,19 +4,45 @@ import { Meta } from "@storybook/addon-docs/blocks";
 
 # Variables
 
-| Variable                | Descrição                                           | Tipo | Default                  |
-| ----------------------- | --------------------------------------------------- | ---- | ------------------------ |
-| `$med-grid-breakpoints` | Define a lista de brekpoints utilizada na aplicação | Map  | Valores descritos abaixo |
+Variáveis SCSS globais necessárias para o junto a functions e mixins SCSS.
+
+## tokens $med-font-size
+
+| Variable                | Descrição                                                | Tipo   | Default  |
+| ----------------------- | -------------------------------------------------------- | ------ | -------- |
+| **$med-font-size-nano** | Define o valor do token **$med-font-size** para **nano** | Number | **10px** |
+| **$med-font-size-xxxs** | Define o valor do token **$med-font-size** para **xxxs** | Number | **12px** |
+| **$med-font-size-xxs**  | Define o valor do token **$med-font-size** para **xxs**  | Number | **14px** |
+| **$med-font-size-xs**   | Define o valor do token **$med-font-size** para **xs**   | Number | **16px** |
+| **$med-font-size-sm**   | Define o valor do token **$med-font-size** para **sm**   | Number | **20px** |
+| **$med-font-size-md**   | Define o valor do token **$med-font-size** para **md**   | Number | **24px** |
+| **$med-font-size-lg**   | Define o valor do token **$med-font-size** para **lg**   | Number | **32px** |
+| **$med-font-size-xl**   | Define o valor do token **$med-font-size** para **xl**   | Number | **40px** |
+| **$med-font-size-xxl**  | Define o valor do token **$med-font-size** para **xxl**  | Number | **48px** |
+| **$med-font-size-xxxl** | Define o valor do token **$med-font-size** para **xxxl** | Number | **64px** |
+| **$med-font-size-huge** | Define o valor do token **$med-font-size** para **huge** | Number | **96px** |
+
+## T=tokens $med-letter spacing
+
+| Variable                                | Descrição                                                                | Tipo   | Default   |
+| --------------------------------------- | ------------------------------------------------------------------------ | ------ | --------- |
+| **$med-letter-spacing-ultracompressed** | Define o valor do token **$med-letter-spacing** para **ultracompressed** | Number | **-0.04** |
+| **$med-letter-spacing-compressed**      | Define o valor do token **$med-letter-spacing** para **compressed**      | Number | **-0.02** |
+| **$med-letter-spacing-default**         | Define o valor do token **$med-letter-spacing** para **default**         | Number | **0**     |
+| **$med-letter-spacing-medium**          | Define o valor do token **$med-letter-spacing** para **medium**          | Number | **0.02**  |
+| **$med-letter-spacing-expanded**        | Define o valor do token **$med-letter-spacing** para **expanded**        | Number | **0.05**  |
+| **$med-letter-spacing-distant**         | Define o valor do token **$med-letter-spacing** para **distant**         | Number | **0.1**   |
+| **$med-letter-spacing-far**             | Define o valor do token **$med-letter-spacing** para **far**             | Number | **0.2**   |
 
 # maps
 
 ## $med-grid-breakpoints:
 
-| Nome | Valor  | Descrição         | Tradução            |
-| ---- | ------ | ----------------- | ------------------- |
-| xxs  | 340px  | extra-extra-small | muito muito pequeno |
-| xs   | 380px  | extra-small       | muito pequeno       |
-| sm   | 576px  | small             | pequeno             |
-| md   | 768px  | medium            | médio               |
-| lg   | 992px  | large             | grande              |
-| xl   | 1200px | extra-large       | muito grande        |
+| Nome    | Valor      | Descrição                                 |
+| ------- | ---------- | ----------------------------------------- |
+| **xxs** | **340px**  | Valor da quebra para o breakpoint **xxs** |
+| **xs**  | **380px**  | Valor da quebra para o breakpoint **xs**  |
+| **sm**  | **576px**  | Valor da quebra para o breakpoint **sm**  |
+| **md**  | **768px**  | Valor da quebra para o breakpoint **md**  |
+| **lg**  | **992px**  | lValor da quebra para o breakpoint **lg** |
+| **xl**  | **1200px** | Valor da quebra para o breakpoint **xl**  |
