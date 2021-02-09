@@ -1,0 +1,98 @@
+import { Meta } from "@storybook/addon-docs/blocks";
+
+<Meta title="medsoft/mixins" />
+
+# Mixins
+
+## iphone-x-range
+
+Define uma rule `@media` que abrange os dispositivos da família iphone X:
+
+```scss
+@mixin iphone-x-range {
+  @media (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait),
+    (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait),
+    (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait) {
+    @content;
+  }
+}
+```
+
+**Exemplo:** Ajuste no header quando a aplicação estiver sendo executada nos dispositivos da família iphone X:
+
+```scss
+@import "./theme/abstracts/mixin-devices";
+
+.header {
+  @include iphone-x-range {
+    padding-top: $med-iphone-x-top;
+  }
+}
+```
+
+## platform
+
+Para mobile o mixin utiliza as classes:
+
+- **android:** `.platform-android`
+- **ios:** `.platform-ios`
+
+Para Desktop o mixin utiliza as classes:
+
+- **mac:** `.plt-desktop .platform-macintel`
+- **windows:** `.plt-electron.plt-desktop`
+- **desktop:**`.plt-electron.plt-desktop`
+
+Essas classes são definidas pelo **[plataform provider](https://ionicframework.com/docs/angular/platform)** do ionic.
+
+```scss
+@mixin platform($platform) {
+  @if $platform == "android" {
+    .platform-android {
+      @content;
+    }
+  } @else if $platform == "ios" {
+    .platform-ios {
+      @content;
+    }
+  } @else if $platform == "windows" {
+    .plt-electron.plt-desktop {
+      @content;
+    }
+  } @else if $platform == "mac" {
+    .plt-desktop .platform-macintel {
+      @content;
+    }
+  } @else if $platform == "desktop" {
+    .plt-electron.plt-desktop {
+      @content;
+    }
+  }
+}
+```
+
+### Parâmetros
+
+| Parâmetro   | Descrição                           | Tipo                                                                  | Default |
+| ----------- | ----------------------------------- | --------------------------------------------------------------------- | ------- |
+| `$platform` | Define a plataforma a ser utilizada | String `'android'` ou`'ios'` ou `'windows'` ou `'mac'` ou `'desktop'` | -       |
+
+**Exemplo:** estilização de uma classe especifíca apenas para plataforma android.
+
+```scss
+@import './theme/abstracts/mixin-devices';
+
+:host {
+  .class {
+    ...
+  }
+}
+
+@include platform('android') {
+  :host {
+    .class {
+      ...
+    }
+  }
+}
+```
