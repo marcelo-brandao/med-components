@@ -1,0 +1,49 @@
+import { Meta } from "@storybook/addon-docs/blocks";
+
+<Meta title="global/mixins/tipografia" />
+
+# Tipografia
+
+## font-face
+
+Define uma @font-face.
+
+**OBS: os seguintes parâmetros são necessários para mantermos retrocompatibilidade. Assim que os arquivos forem migrados, será possível o ajuste de nomenclatura de arquivos e o refact dos parâmetros do mixin.**
+
+```scss
+@mixin font-face($font-name, $font-file, $weight, $style, $svg-id) {
+  @font-face {
+    font-family: quote($font-name);
+    src: url($med-font-path + $font-file + ".eot");
+    src: url($med-font-path + $font-file + ".eot?#iefix") format("embedded-opentype"),
+      url($med-font-path + $font-file + ".woff") format("woff"),
+      url($med-font-path + $font-file + ".svg##{$svg-id}") format("svg");
+    font-weight: $weight;
+    font-style: $style;
+  }
+}
+```
+
+### Parâmetros
+
+| Parâmetro    | Descrição                     | Tipo   | Default |
+| ------------ | ----------------------------- | ------ | ------- |
+| `$font-name` | Define o font-family da fonte | String | -       |
+| `$font-file` | Define o path da fonte        | String | -       |
+| `$weight`    | Define o peso da fonte        | Number | -       |
+| `$style`     | Define o estilo da fonte      | String | -       |
+| `$svg-id`    | Define o id do svg da fonte   | String | -       |
+
+### Exemplo
+
+```scss
+@import "./theme/abstracts/mixin-fonts";
+
+@include font-face(
+  "fsemeric",
+  "fsemeric/Regular/FSEmericWeb-Regular",
+  400,
+  "normal",
+  "FSEmericWeb"
+);
+```

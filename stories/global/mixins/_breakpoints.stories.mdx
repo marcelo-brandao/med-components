@@ -1,0 +1,187 @@
+import { Meta } from "@storybook/addon-docs/blocks";
+import breakpoints from "../../assets/breakpoints.jpg";
+
+<Meta title="global/mixins/breakpoints" />
+
+# Breakpoints
+
+## O que são?
+
+São as quebras de layout padrões adotadas junto ao time de designers.
+Ao todo temos 6 quebras que vão do menor ao maior possível, bem como um limitador máximo para que não precisemos
+nos preocupar com resoluções acima do fullHD por enquanto, pois não é o propósito do app.
+
+<img src={breakpoints} alt="breakpoints" />
+
+## breakpoint-up
+
+Limita o tamanho mínimo para ser aplicado:
+
+```scss
+@mixin breakpoint-up($name, $breakpoints: $med-grid-breakpoints) {
+  $min: breakpoint-min($name, $breakpoints);
+  @if $min {
+    @media (min-width: $min) {
+      @content;
+    }
+  } @else {
+    @error 'breakpoint `#{$name}` not found in `#{$breakpoints}`';
+  }
+}
+```
+
+**Exemplo:**
+
+```
+@import './theme/abstracts/mixins-breakpoints';
+
+:host {
+  .class {
+    @include breakpoint-up('xxs') {
+      ...
+    }
+  }
+}
+```
+
+## breakpoint-down
+
+Limita o tamanho máximo que poderá ser exibido:
+
+```scss
+@mixin breakpoint-down($name, $breakpoints: $med-grid-breakpoints) {
+  $max: breakpoint-max($name, $breakpoints);
+  @if $max {
+    @media (max-width: $max) {
+      @content;
+    }
+  } @else {
+    @error 'breakpoint `#{$name}` not found in `#{$breakpoints}`';
+  }
+}
+```
+
+**Exemplo:**
+
+```
+@import './theme/abstracts/mixins-breakpoints';
+
+:host {
+  .class {
+    @include breakpoint-down('lg') {
+      ...
+    }
+  }
+}
+```
+
+## breakpoint-between
+
+Limita a exibição da condição entre uma faixa de breakpoints:
+
+```scss
+@mixin breakpoint-between($lower, $upper, $breakpoints: $med-grid-breakpoints) {
+  $min: breakpoint-min($lower, $breakpoints);
+  $max: breakpoint-max($upper, $breakpoints);
+
+  @if $min != null and $max != null {
+    @media (min-width: $min) and (max-width: $max) {
+      @content;
+    }
+  } @else if $max == null {
+    @error 'breakpoint `#{$upper}` not found in `#{$breakpoints}`';
+  } @else if $min == null {
+    @error 'breakpoint `#{$lower}` not found in `#{$breakpoints}`';
+  }
+}
+```
+
+**Exemplo:**
+
+```
+@import './theme/abstracts/mixins-breakpoints';
+
+:host {
+  .class {
+    @include breakpoint-between('lg','xl') {
+      ...
+    }
+  }
+}
+```
+
+## breakpoint-only
+
+Especifica em um determinado target:
+
+```scss
+@mixin breakpoint-only($name, $breakpoints: $med-grid-breakpoints) {
+  $min: breakpoint-min($name, $breakpoints);
+  $next: breakpoint-next($name, $breakpoints);
+  $max: breakpoint-max($next);
+
+  @if $min != null and $max != null {
+    @media (min-width: $min) and (max-width: $max) {
+      @content;
+    }
+  } @else if $max == null {
+    @error 'breakpoint `#{$next}` not found in `#{$breakpoints}`';
+  } @else if $min == null {
+    @error 'breakpoint `#{$name}` not found in `#{$breakpoints}`';
+  }
+}
+```
+
+**Exemplo:**
+
+```
+@import './theme/abstracts/mixins-breakpoints';
+
+:host {
+  .class {
+    @include breakpoint-only('md') {
+      ...
+    }
+  }
+}
+```
+
+<img src={breakpoints} alt="breakpoints" />
+
+## landscape
+
+Define uma rule `@media` para estilizações pontuais dependentes de orientação:
+
+```scss
+@mixin landscape($orientation: landscape) {
+  @media screen and (orientation: $orientation) {
+    @content;
+  }
+}
+```
+
+### Parâmetros
+
+| Parâmetro      | Descrição                          | Tipo   | Default   |
+| -------------- | ---------------------------------- | ------ | --------- |
+| `$orientation` | Define a orientação do dispositivo | String | landscape |
+
+**Exemplo:** estilização de uma classe especifíca apenas para modo landscape.
+
+```scss
+@import './theme/abstracts/mixin-devices';
+
+:host {
+  .class {
+    ...
+  }
+}
+
+@include landscape() {
+  :host {
+    .class {
+      ...
+    }
+  }
+}
+```
