@@ -6,7 +6,7 @@ export default {
 };
 
 const TemplateTipografia = () => {
-  return `<div>Para visualizar clina na aba Design abaixo</div>`;
+  return `<h1 style="font-family: sans-serif; text-align: center;">Para visualizar clique na aba <span style="color: #3a8bd8;">Design</span> abaixo!</h1>`;
 };
 
 export const Tipografia = TemplateTipografia.bind({});
