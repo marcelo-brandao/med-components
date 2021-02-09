@@ -8,8 +8,7 @@
     "compile": "sass --style expanded --source-map --embed-sources --no-error-css src/:dist/",
     "prefix": "postcss --config scripts/postcss.config.js --replace \"dist/*.css\" \"!dist/*.min.css\"",
     "minify": "cleancss -O1 --format breakWith=lf --source-map --source-map-inline-sources --output dist/med-components.min.css dist/med-components.css && cleancss -O1 --format breakWith=lf --source-map --source-map-inline-sources --output dist/med-components-tokens.min.css dist/med-components-tokens.css && cleancss -O1 --format breakWith=lf --source-map --source-map-inline-sources --output dist/med-components-grid.min.css dist/med-components-grid.css",
-    "build": "npm-run-all lint compile prefix minify",
-    "publish": "npm run build && npm publish --access public"
+    "build": "npm-run-all lint compile prefix minify"
   },
   "keywords": [],
   "author": "",
