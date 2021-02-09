@@ -21,9 +21,9 @@ O valor da propriedade CSS **line-height** necessita do cálculo **(ceiling((fon
 
 ### fn: line-height($font-size: $med-font-size-xs);
 
-| Parâmetro      | Descrição                                                                                                                                                                                                         | Tipo   | Default               |
-| -------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------ | --------------------- |
-| **$font-size** | Valor dos tokens **[$med-font-size](http://desenv.ordomederi.com/med-components/?path=/story/global-variables--page#tokens-med-font-size)** necessário para geração do valor final da propriedade **line-height** | Number | **$med-font-size-xs** |
+| Parâmetro      | Descrição                                                                                                                                                                                                             | Tipo   | Default               |
+| -------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------ | --------------------- |
+| **$font-size** | Valor dos tokens **[$med-font-size](http://desenv.ordomederi.com/med-components/?path=/story/global-variables--page#tokens-med-font-size)** necessário para geração do valor final da propriedade CSS **line-height** | Number | **$med-font-size-xs** |
 
 ## letter-spacing()
 
@@ -33,7 +33,7 @@ O valor da propriedade CSS **letter-spacing** leva em conta o tamanho da fonte s
 
 ```scss
 .class {
-  letter-spacing: letter-spacing($med-font-size-md, $med-line-spacing-default);
+  letter-spacing: letter-spacing($med-font-size-md, $med-letter-spacing-medium);
 }
 ```
 
