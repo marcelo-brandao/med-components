@@ -28,6 +28,7 @@
     "postcss": "^8.2.5",
     "postcss-cli": "^8.3.1",
     "sass": "^1.32.6",
+    "storybook-addon-designs": "^5.4.3",
     "stylelint": "^13.9.0",
     "stylelint-config-concentric-order": "^4.0.1"
   },
