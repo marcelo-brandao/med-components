@@ -1,3 +1,4 @@
 src/med-components-tokens.scss
 stories/global/_variables.stories.mdx
 stories/global/functions/_tipografia.stories.mdx
+stories/global/mixins/_tipografia.stories.mdx

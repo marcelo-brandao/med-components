@@ -4,41 +4,15 @@ import { Meta } from "@storybook/addon-docs/blocks";
 
 # Tipografia
 
-## font-face
+Mixins **globais** relacionados a tipografia.
 
-Define uma @font-face.
+## font-face()
 
-**OBS: os seguintes parâmetros são necessários para mantermos retrocompatibilidade. Assim que os arquivos forem migrados, será possível o ajuste de nomenclatura de arquivos e o refact dos parâmetros do mixin.**
+Mixin criado para gerar uma dada **@font-face**.
 
-```scss
-@mixin font-face($font-name, $font-file, $weight, $style, $svg-id) {
-  @font-face {
-    font-family: quote($font-name);
-    src: url($med-font-path + $font-file + ".eot");
-    src: url($med-font-path + $font-file + ".eot?#iefix") format("embedded-opentype"),
-      url($med-font-path + $font-file + ".woff") format("woff"),
-      url($med-font-path + $font-file + ".svg##{$svg-id}") format("svg");
-    font-weight: $weight;
-    font-style: $style;
-  }
-}
-```
-
-### Parâmetros
-
-| Parâmetro    | Descrição                     | Tipo   | Default |
-| ------------ | ----------------------------- | ------ | ------- |
-| `$font-name` | Define o font-family da fonte | String | -       |
-| `$font-file` | Define o path da fonte        | String | -       |
-| `$weight`    | Define o peso da fonte        | Number | -       |
-| `$style`     | Define o estilo da fonte      | String | -       |
-| `$svg-id`    | Define o id do svg da fonte   | String | -       |
-
-### Exemplo
+### Utilização:
 
 ```scss
-@import "./theme/abstracts/mixin-fonts";
-
 @include font-face(
   "fsemeric",
   "fsemeric/Regular/FSEmericWeb-Regular",
@@ -47,3 +21,13 @@ Define uma @font-face.
   "FSEmericWeb"
 );
 ```
+
+### @include font-face($font-name, $font-path, $weight, $style, $svg-id);
+
+| Parâmetro      | Descrição                     | Tipo   | Default |
+| -------------- | ----------------------------- | ------ | ------- |
+| **$font-name** | Define o font-family da fonte | String | -       |
+| **$font-file** | Define o path da fonte        | String | -       |
+| **$weight**    | Define o peso da fonte        | Number | -       |
+| **$style**     | Define o estilo da fonte      | String | -       |
+| **$svg-id**    | Define o id do svg da fonte   | String | -       |

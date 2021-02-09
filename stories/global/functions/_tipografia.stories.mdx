@@ -4,12 +4,14 @@ import { Meta } from "@storybook/addon-docs/blocks";
 
 # Tipografia
 
-Funções que foram criadas para facilitar o uso das propriedades CSS **line-height** e **letter-spacing**, pois estas necessitam
-de um cálculo para serem utilizadas. É necessária a utilização dos tokens **[$med-font-size](http://desenv.ordomederi.com/med-components/?path=/story/global-variables--page#tokens-med-font-size) e [$med-letter-spacing](http://desenv.ordomederi.com/med-components/?path=/story/global-variables--page#tokens-med-letter-spacing) no formato SCSS** junto a elas.
+Funções **globais** relacionadas a tipografia.
 
 ## line-height()
 
-O valor da propriedade CSS **line-height** necessita do cálculo **(ceiling((font-size \* 1,3) 8))** para ser gerado.
+Função criada para se utilizada junto a propriedade CSS **line-height**. O valor da propriedade CSS **line-height**
+utiliza do cálculo **(ceiling((font-size \* 1,3) 8))** para ser gerada. O valor do parâmero da função necessita dos tokens
+**[$med-font-size](http://desenv.ordomederi.com/med-components/?path=/story/global-variables--page#tokens-med-font-size) no formato SCSS**,
+pois valores no formato **CSS Properties** não funcionam em conjunto com **SASS Functions**.
 
 ### Utilização:
 
@@ -27,7 +29,10 @@ O valor da propriedade CSS **line-height** necessita do cálculo **(ceiling((fon
 
 ## letter-spacing()
 
-O valor da propriedade CSS **letter-spacing** leva em conta o tamanho da fonte sendo utilizada no elemento para ser calculado.
+Função criada para se utilizada junto a propriedade CSS **letter-spacing**. O valor da propriedade CSS **letter-spacing**
+leva em conta o **tamanho da fonte sendo utilizada no elemento** para ser gerada. O valor do parâmero da função necessita
+dos tokens **[$med-font-size](http://desenv.ordomederi.com/med-components/?path=/story/global-variables--page#tokens-med-font-size) e [$med-letter-spacing](http://desenv.ordomederi.com/med-components/?path=/story/global-variables--page#tokens-med-letter-spacing) no formato SCSS**,
+pois valores no formato **CSS Properties** não funcionam em conjunto com **SASS Functions**.
 
 ### Utilização:
 
