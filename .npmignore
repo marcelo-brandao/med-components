@@ -1,0 +1,10 @@
+.vscode
+scripts
+
+.browserslistrc
+.editorconfig
+.prettierignore
+.stylelintrc.json
+package-lock.json
+package.json
+TODO.md

@@ -1,23 +1,28 @@
 {
   "name": "@mbrandao/med-components",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "compile": "node-sass src/scss/ -o src/css/",
-    "autoprefix": "npx postcss src/css/*.css -u autoprefixer -d dist/",
-    "minify": "npx postcss dist/*.css -u cssnano -d dist/",
-    "build": "npm run compile && npm run autoprefix && npm run minify"
+    "lint": "stylelint \"**/*.{css,scss}\"",
+    "compile": "sass --style expanded --source-map --embed-sources --no-error-css src/:dist/",
+    "prefix": "postcss --config scripts/postcss.config.js --replace \"dist/*.css\" \"!dist/*.min.css\"",
+    "minify": "cleancss -O1 --format breakWith=lf --source-map --source-map-inline-sources --output dist/med-components.min.css dist/med-components.css && cleancss -O1 --format breakWith=lf --source-map --source-map-inline-sources --output dist/med-components-tokens.min.css dist/med-components-tokens.css && cleancss -O1 --format breakWith=lf --source-map --source-map-inline-sources --output dist/med-components-grid.min.css dist/med-components-grid.css",
+    "build": "npm-run-all lint compile prefix minify",
+    "publish": "npm run build && npm publish --access public"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "autoprefixer": "^10.2.4",
-    "cssnano": "^4.1.10",
-    "node-sass": "^5.0.0",
+    "clean-css-cli": "^4.3.0",
+    "npm-run-all": "^4.1.5",
     "postcss": "^8.2.5",
-    "postcss-cli": "^8.3.1"
+    "postcss-cli": "^8.3.1",
+    "sass": "^1.32.6",
+    "stylelint": "^13.9.0",
+    "stylelint-config-concentric-order": "^4.0.1"
   },
   "repository": {
     "type": "git",
@@ -26,5 +31,6 @@
   "bugs": {
     "url": "https://github.com/marcelo-brandao/med-components/issues"
   },
-  "homepage": "https://github.com/marcelo-brandao/med-components#readme"
+  "homepage": "https://github.com/marcelo-brandao/med-components#readme",
+  "dependencies": {}
 }

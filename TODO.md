@@ -1,5 +1,5 @@
 - instalar storybook
 - instalar plugin figma
 - documentar:
-    - functions
+  - functions
 - pegar browserlist com brunão
