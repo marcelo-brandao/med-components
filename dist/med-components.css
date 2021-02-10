@@ -1,3 +1,27 @@
+/*
+* breakpoints
+*/
+/*
+* tipografia
+*/
+/*
+* breakpoints
+*/
+/*
+* tipografia
+*/
+/*
+* breakpoints
+*/
+/*
+* tipografia
+*/
+/*
+* breakpoints
+*/
+/*
+* tipografia
+*/
 :root {
   --med-color-brand-primary-darkest: #074953;
   --med-color-brand-primary-darkest-rgb: 7, 73, 83;
@@ -9,7 +33,11 @@
   --med-color-brand-primary-light-rgb: 115, 214, 229;
   --med-color-brand-primary-lightest: #b0ecf5;
   --med-color-brand-primary-lightest-rgb: 176, 236, 245;
-  --med-color-brand-primary-gradient: linear-gradient( to bottom, var(--med-color-brand-primary-medium), var(--med-color-brand-primary-dark));
+  --med-color-brand-primary-gradient: linear-gradient(
+    to bottom,
+    var(--med-color-brand-primary-medium),
+    var(--med-color-brand-primary-dark)
+  );
   --med-color-aula-darkest: #075344;
   --med-color-aula-darkest-rgb: 7, 83, 68;
   --med-color-aula-dark: #13856e;
@@ -80,7 +108,11 @@
   --med-color-neutral-light-20-rgb: 194, 194, 194;
   --med-color-neutral-light-10: #adadad;
   --med-color-neutral-light-10-rgb: 173, 173, 173;
-  --med-color-neutral-gradient: linear-gradient(to bottom, var(--med-color-neutral-dark-prime), var(--med-color-neutral-light-prime));
+  --med-color-neutral-gradient: linear-gradient(
+    to bottom,
+    var(--med-color-neutral-dark-prime),
+    var(--med-color-neutral-light-prime)
+  );
   --med-color-feedback-warning-darkest: #504606;
   --med-color-feedback-warning-darkest-rgb: 80, 70, 6;
   --med-color-feedback-warning-dark: #857513;

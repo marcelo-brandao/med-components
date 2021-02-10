@@ -6,12 +6,21 @@ import { Meta } from "@storybook/addon-docs/blocks";
 
 Mixins utilizados **apenas** na aplicação **medsoft**.
 
+## Utilização
+
+No arquivo que a utilização dos mixins sejam necessárias, importar:
+
+``` scss
+@import './node_modules/@mbrandao/med-components/src/medsoft/medsoft';
+```
+
 ## iphone-x-range()
 
-Mixin criado para podermos estilizar pontualmente valores no tamanho de tela específicos
-de dispositivos da **família iphone X**. Esse mixins são geralmente utilizados para ajustar a altura do header devido ao
-**[chanfrado](https://support.apple.com/en-ca/HT207354)** presente nesses dispositivos, e se for o caso, deve ser utilizado
-em conjunto com as **[variáveis SASS](http://desenv.ordomederi.com/med-components/?path=/story/medsoft-variables--page)**, como mostra o exemplo abaixo.
+Mixin criado para estilização pontual no tamanho de tela específicos e dispositivos da **família iphone X**.
+Esse mixins são geralmente utilizados para ajustar a altura do header devido ao **[chanfrado](https://support.apple.com/en-ca/HT207354)**
+presente nesses dispositivos, e se for o caso, deve ser utilizado em conjunto com as
+**[variáveis SASS](http://desenv.ordomederi.com/med-components/?path=/story/medsoft-variables--page)**, como mostra o
+exemplo abaixo.
 
 **Exemplo:** _Ajuste no header quando a aplicação estiver sendo executada nos dispositivos da família iphone X:_
 
