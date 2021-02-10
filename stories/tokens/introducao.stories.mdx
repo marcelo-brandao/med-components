@@ -4,7 +4,13 @@ import { Meta } from "@storybook/addon-docs/blocks";
 
 # Tokens
 
-Os tokens são uma forma de padronizar a identidade visual de layout e componentes tanto no processo de criação quanto no de diagramação.
+## O que são?
+
+Os tokens são uma forma de **facilitar** e **padronizar** a identidade visual dos produtos tanto no processo de criação quanto no de implementação.
+Com isso o processo de criação e desenvolvimento se da com **qualidade** e **agilidade**, promovendo **padronização**
+e **reusabilidade**, minimizando **custos** e **retrabalho**.
+
+## Utilização
 
 Os tokens estão presentes em:
 
@@ -13,13 +19,20 @@ Os tokens estão presentes em:
 - **[Tokens de Espaçamento](http://desenv.ordomederi.com/med-components/?path=/story/tokens-espacamento--espacamento)**
 - **[Tokens Complementares](http://desenv.ordomederi.com/med-components/?path=/story/tokens-complementares--complementares)**
 
-e para utilizá-los basta referência-los como **CSS Properties** no código.
+Para utilizá-los basta referência-los como **CSS Properties** no código.
+
+## IMPORTANTE!!!
+
+- Para utilizar o token **$med-line-height-default** é necessário o uso da function **[line-height()](http://desenv.ordomederi.com/med-components/?path=/story/global-functions-tipografia--page#line-height)**.
+- Para utilizar os tokens **$med-letter-spacing-*** é necessário o uso da function **[letter-spacing()](http://desenv.ordomederi.com/med-components/?path=/story/global-functions-tipografia--page#letter-spacing)**.
 
 ## Exemplo
 
-**IMPORTANTE! Exemplificação do uso dos tokens apenas, os componentes não devem ser criados dessa maneira!**
+**IMPORTANTE! Exemplificação do uso dos tokens. Os componentes não devem ser criados dessa maneira!**
 
-Vamos utilizar os tokens presentes no seguinte **[exemplo](http://desenv.ordomederi.com/med-components/?path=/story/tokens-exemplo--exemplo)**.
+Nesse exemplo vamos utilizar os tokens presentes na seguinte **[seção](http://desenv.ordomederi.com/med-components/?path=/story/tokens-exemplo--exemplo)**.
+
+### Markup
 
 ```html
 <div class="nav-bar">
@@ -28,6 +41,8 @@ Vamos utilizar os tokens presentes no seguinte **[exemplo](http://desenv.ordomed
   <img class="icon icon--right" src="icon.svg" alt="icon">
 </div>
 ```
+
+### Estilização
 
 ```scss
 .nav-bar {
@@ -62,8 +77,3 @@ Vamos utilizar os tokens presentes no seguinte **[exemplo](http://desenv.ordomed
 }
 
 ```
-
-## IMPORTANTE!!!
-
-- Para utilizar o token **$med-line-height-default** é necessário o uso da function **[line-height()](http://desenv.ordomederi.com/med-components/?path=/story/global-functions-tipografia--page#line-height)**.
-- Para utilizar os tokens **$med-letter-spacing-*** é necessário o uso da function **[letter-spacing()](http://desenv.ordomederi.com/med-components/?path=/story/global-functions-tipografia--page#letter-spacing)**.

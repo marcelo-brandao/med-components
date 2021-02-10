@@ -1,0 +1,55 @@
+import { Meta } from "@storybook/addon-docs/blocks";
+
+<Meta title="General/Biblioteca" />
+
+# Biblioteca
+
+- **[github](https://github.com/marcelo-brandao/med-components)**
+- **[npm package](https://www.npmjs.com/package/@mbrandao/med-components)**
+
+# Instalação
+
+### npm
+
+``` bash
+npm i -D @mbrandao/med-components
+```
+
+### yarn
+
+``` bash
+yarn add --dev @mbrandao/med-components
+```
+
+# Utilização
+
+## Medsoft
+
+Para utilizar a biblioteca, no arquivo **./src/medsoft/global.scss**, importar:
+
+``` scss
+@import '~@mbrandao/med-components/src/med-components-medsoft';
+```
+Se existir a necessidade da utilização de **variáveis, functions e mixins SASS**, no arquivo em que eles serão
+utilizados, importar:
+
+``` scss
+@import '~@mbrandao/med-components/src/medsoft/medsoft';
+```
+
+## External Pages
+
+Para utilizar a biblioteca, no arquivo **./src/assets/styles/global.scss**, importar:
+
+``` scss
+@import '~@mbrandao/med-components/src/med-components.scss';
+```
+
+Se existir a necessidade da utilização de **variáveis, functions e mixins SASS**, no arquivo em que eles serão
+utilizados, importar:
+
+``` scss
+@import '~@mbrandao/med-components/src/global/global';
+```
+
+## Inscrições

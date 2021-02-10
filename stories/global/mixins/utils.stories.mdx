@@ -1,0 +1,49 @@
+import { Meta } from "@storybook/addon-docs/blocks";
+import breakpoints from "../../assets/breakpoints.jpg";
+
+<Meta title="Global/Mixins/Utils" />
+
+# Utils
+
+Mixins **globais** relacionados a **utilidades gerais**.
+
+## Utilização
+
+No arquivo em que a utilização dos **mixins** forem **necessárias**, importar:
+
+``` scss
+@import '~@mbrandao/med-components/src/global/global';
+```
+
+## landscape()
+
+Mixin criado para estilizações pontuais dependentes de orientação:
+
+### Utilização:
+
+```scss
+@include landscape() {
+  .class { ... }
+}
+```
+
+### Utilização host:
+
+```scss
+:host {
+  .class { ... }
+}
+
+@include landscape() {
+  :host {
+    .class { ... }
+  }
+}
+```
+
+### @include landscape($orientation: landscape);
+
+| Parâmetro        | Descrição                          | Tipo   | Default       |
+| ---------------- | ---------------------------------- | ------ | ------------- |
+| **$orientation** | Define a orientação do dispositivo | String | **landscape** |
+
