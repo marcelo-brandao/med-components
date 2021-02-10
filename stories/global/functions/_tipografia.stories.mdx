@@ -16,9 +16,9 @@ No arquivo que a utilização das functions sejam necessárias, importar:
 
 ## line-height()
 
-Função criada para se utilizada junto a propriedade CSS **line-height**. O valor da propriedade utiliza do cálculo
+Função criada para ser utilizada junto a propriedade CSS **line-height**. O valor da propriedade utiliza o cálculo
 **(ceiling((font-size \* 1,3) 8))** para ser gerada. O valor do parâmero da função necessita dos tokens
-**[$med-font-size](http://desenv.ordomederi.com/med-components/?path=/story/global-variables--page#tokens-med-font-size) no formato SASS**,
+**[$med-font-size-*](http://desenv.ordomederi.com/med-components/?path=/story/global-variables--page#tokens-med-font-size) no formato SASS**,
 pois valores no formato **CSS Properties** não funcionam em conjunto com **SASS Functions**.
 
 ### Utilização:
@@ -31,14 +31,14 @@ pois valores no formato **CSS Properties** não funcionam em conjunto com **SASS
 
 ### fn(): line-height($font-size: $med-font-size-xs);
 
-| Parâmetro      | Descrição                                                                                                                                                                                                             | Tipo   | Default               |
-| -------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------ | --------------------- |
-| **$font-size** | Valor dos tokens **[$med-font-size](http://desenv.ordomederi.com/med-components/?path=/story/global-variables--page#tokens-med-font-size)** necessário para geração do valor final da propriedade CSS **line-height** | Number | **$med-font-size-xs** |
+| Parâmetro      | Descrição                                                                                                                                                                                                               | Tipo   | Default               |
+| -------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------ | --------------------- |
+| **$font-size** | Valor dos tokens **[$med-font-size-*](http://desenv.ordomederi.com/med-components/?path=/story/global-variables--page#tokens-med-font-size)** necessário para geração do valor final da propriedade CSS **line-height** | Number | **$med-font-size-xs** |
 
 ## letter-spacing()
 
-Função criada para se utilizada junto a propriedade CSS **letter-spacing**. O valor da propriedade leva em conta o **tamanho da fonte sendo utilizada no elemento**  para ser gerada. O valor do parâmero da função necessita
-dos tokens **[$med-font-size](http://desenv.ordomederi.com/med-components/?path=/story/global-variables--page#tokens-med-font-size) e [$med-letter-spacing](http://desenv.ordomederi.com/med-components/?path=/story/global-variables--page#tokens-med-letter-spacing) no formato SASS**,
+Função criada para ser utilizada junto a propriedade CSS **letter-spacing**. O valor da propriedade leva em conta o **tamanho da fonte sendo utilizada no elemento**  para ser gerada. O valor do parâmero da função necessita
+dos tokens **[$med-font-size-*](http://desenv.ordomederi.com/med-components/?path=/story/global-variables--page#tokens-med-font-size) e [$med-letter-spacing-*](http://desenv.ordomederi.com/med-components/?path=/story/global-variables--page#tokens-med-letter-spacing) no formato SASS**,
 pois valores no formato **CSS Properties** não funcionam em conjunto com **SASS Functions**.
 
 ### Utilização:
@@ -51,7 +51,7 @@ pois valores no formato **CSS Properties** não funcionam em conjunto com **SASS
 
 ### fn(): letter-spacing($font-size: $med-font-size-xs, $letter-spacing: $med-line-spacing-default);
 
-| Parâmetro           | Descrição                                                                                                                                                                                                                          | Tipo   | Default                       |
-| ------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------ | ----------------------------- |
-| **$font-size**      | Valor dos tokens **[$med-font-size](http://desenv.ordomederi.com/med-components/?path=/story/global-variables--page#tokens-med-font-size)** necessário para geração do valor final da propriedade CSS **letter-spacing**           | Number | **$med-font-size-xs**         |
-| **$letter-spacing** | Valor dos tokens **[$med-letter-spacing](http://desenv.ordomederi.com/med-components/?path=/story/global-variables--page#tokens-med-letter-spacing)** necessário para geração do valor final da propriedade CSS **letter-spacing** | Number | **$med-line-spacing-default** |
+| Parâmetro           | Descrição                                                                                                                                                                                                                            | Tipo   | Default                       |
+| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------ | ----------------------------- |
+| **$font-size**      | Valor dos tokens **[$med-font-size-*](http://desenv.ordomederi.com/med-components/?path=/story/global-variables--page#tokens-med-font-size)** necessário para geração do valor final da propriedade CSS **letter-spacing**           | Number | **$med-font-size-xs**         |
+| **$letter-spacing** | Valor dos tokens **[$med-letter-spacing-*](http://desenv.ordomederi.com/med-components/?path=/story/global-variables--page#tokens-med-letter-spacing)** necessário para geração do valor final da propriedade CSS **letter-spacing** | Number | **$med-line-spacing-default** |
