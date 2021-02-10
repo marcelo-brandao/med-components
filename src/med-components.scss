@@ -1,7 +1,4 @@
-@import "./global/functions";
-@import "./global/variables";
-@import "./global/mixins";
+@import "./global/global";
+@import "./tokens/tokens";
 
-@import "./med-components-tokens";
-
-@import "./med-components-grid";
+@import "./grid/grid";

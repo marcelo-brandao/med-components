@@ -65,13 +65,13 @@
 * tipografia
 */
 
-@mixin font-face($font-name, $font-file, $weight, $style, $svg-id) {
+@mixin font-face($font-name, $font-path, $weight, $style, $svg-id) {
   @font-face {
     font-family: quote($font-name);
-    src: url($font-file + ".eot");
-    src: url($font-file + ".eot?#iefix") format("embedded-opentype"),
-      url($font-file + ".woff") format("woff"),
-      url($font-file + ".svg##{$svg-id}") format("svg");
+    src: url($font-path + ".eot");
+    src: url($font-path + ".eot?#iefix") format("embedded-opentype"),
+      url($font-path + ".woff") format("woff"),
+      url($font-path + ".svg##{$svg-id}") format("svg");
     font-weight: $weight;
     font-style: unquote($style);
   }
