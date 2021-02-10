@@ -4,13 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook",
     "lint": "stylelint \"**/*.{css,scss}\"",
     "compile": "sass --style expanded --source-map --embed-sources --no-error-css src/:dist/",
     "prefix": "postcss --config scripts/postcss.config.js --replace \"dist/*.css\" \"!dist/*.min.css\"",
     "minify": "cleancss -O1 --format breakWith=lf --source-map --source-map-inline-sources --output dist/med-components.min.css dist/med-components.css && cleancss -O1 --format breakWith=lf --source-map --source-map-inline-sources --output dist/med-components-medsoft.min.css dist/med-components-medsoft.css",
     "build": "npm-run-all lint compile prefix minify",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
   },
   "keywords": [],
   "author": "",
