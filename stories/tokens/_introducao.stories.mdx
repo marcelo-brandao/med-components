@@ -4,12 +4,9 @@ import { Meta } from "@storybook/addon-docs/blocks";
 
 # Tokens
 
-**[Tokens no figma](https://www.figma.com/file/4QvnRfhttlJ2hIKQbuEPZl/Tokens?node-id=308%3A120)**
+Os tokens são uma forma de padronizar a identidade visual de layout e componentes tanto no processo de criação quanto no de diagramação.
 
-Os tokens são uma forma de padronizar a identidade visual de layout e componentes tanto no processo de criação, como de
-diagramação.
-
-Para utilizar os tokens no código, basta utilizar os tokens presentes em:
+Para utilizar os tokens, basta utilizar os tokens presentes em:
 
 - **[Tokens de Cores](http://desenv.ordomederi.com/med-components/?path=/story/tokens-cores--cores)**
 - **[Tokens de Tipografia](http://desenv.ordomederi.com/med-components/?path=/story/tokens-tipografia--tipografia)**
@@ -18,9 +15,11 @@ Para utilizar os tokens no código, basta utilizar os tokens presentes em:
 
 e utilizá-los como **CSS Properties**.
 
-**Exemplo: apenas para exemplificar o uso dos tokens, os componentes não devem ser criados dessa maneira!**
+## Exemplo
 
-Vamos utilizar os tokens presentes no **[exemplo](http://desenv.ordomederi.com/med-components/?path=/story/tokens-exemplo--exemplo)**.
+**Exemplo apenas para exemplificar o uso dos tokens, os componentes não devem ser criados dessa maneira!**
+
+Vamos utilizar os tokens presentes no seguinte **[exemplo](http://desenv.ordomederi.com/med-components/?path=/story/tokens-exemplo--exemplo)**.
 
 ```html
 <div class="nav-bar">
@@ -35,22 +34,28 @@ Vamos utilizar os tokens presentes no **[exemplo](http://desenv.ordomederi.com/m
   display: flex;
   align-items: center;
   justify-content: space-between;
+
   padding: var(--med-spacing-squish-xs);
   background: var(--med-color-neutral-dark-prime);
+
   &__heading {
     text-transform: uppercase;
+
     font-size: var(--med-font-size-xs);
     padding-top: var(--med-spacing-squish-xs);
     color: var(--med-color-neutral-light-prime);
     letter-spacing: var(--med-line-height-compressed);
   }
 }
+
 .icon {
   min-width: 24px;
   min-height: 24px;
+
   &--left {
     padding-right: var(--med-spacing-inline-base);
   }
+
   &--right {
     padding-left: var(--med-spacing-inline-base);
   }
@@ -58,7 +63,7 @@ Vamos utilizar os tokens presentes no **[exemplo](http://desenv.ordomederi.com/m
 
 ```
 
-## IMPORTANTE!
+## IMPORTANTE!!!
 
 - Para utilizar o token **$med-line-height-default** é necessário o uso da function **[line-height()](http://desenv.ordomederi.com/med-components/?path=/story/global-functions-tipografia--page#line-height)**.
-- Para utilizar oa tokena **$med-letter-spacing-*** é necessário o uso da function **[letter-spacing()](http://desenv.ordomederi.com/med-components/?path=/story/global-functions-tipografia--page#letter-spacing)**.
+- Para utilizar os tokens **$med-letter-spacing-*** é necessário o uso da function **[letter-spacing()](http://desenv.ordomederi.com/med-components/?path=/story/global-functions-tipografia--page#letter-spacing)**.

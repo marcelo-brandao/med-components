@@ -55,12 +55,6 @@
   }
 }
 
-@mixin landscape($orientation: landscape) {
-  @media screen and (orientation: $orientation) {
-    @content;
-  }
-}
-
 /*
 * tipografia
 */
@@ -74,5 +68,15 @@
       url($font-path + ".svg##{$svg-id}") format("svg");
     font-weight: $weight;
     font-style: unquote($style);
+  }
+}
+
+/*
+* utils
+*/
+
+@mixin landscape($orientation: landscape) {
+  @media screen and (orientation: $orientation) {
+    @content;
   }
 }

@@ -7,37 +7,39 @@ import { Meta } from "@storybook/addon-docs/blocks";
 - **[npm package](https://www.npmjs.com/package/@mbrandao/med-components)**
 - **[github](https://github.com/marcelo-brandao/med-components)**
 
-## Instalação
+# Instalação
 
 ``` bash
 npm i -D @mbrandao/med-components
 ```
 
-### External Pages
+# Utilização
 
-Para utilizar a biblioteca, no arquivo **./src/assets/styles/global.scss** importar:
+## External Pages
+
+Para utilizar a biblioteca, no arquivo **./src/assets/styles/global.scss**, importar:
 
 ``` scss
-@import './node_modules/@mbrandao/med-components/src/med-components.scss';
+@import '~@mbrandao/med-components/src/med-components.scss';
 ```
 
 Se existir a necessidade da utilização de **variáveis, functions e mixins SASS**, no arquivo em que eles serão
-utilizados importar:
+utilizados, importar:
 
 ``` scss
-@import './node_modules/@mbrandao/med-components/src/global/global';
+@import '~@mbrandao/med-components/src/global/global';
 ```
 
-### Medsoft
+## Medsoft
 
-Para utilizar a biblioteca, no arquivo **./src/medsoft/global.scss** importar:
+Para utilizar a biblioteca, no arquivo **./src/medsoft/global.scss**, importar:
 
 ``` scss
-@import './node_modules/@mbrandao/med-components/src/med-components-medsoft';
+@import '~@mbrandao/med-components/src/med-components-medsoft';
 ```
 Se existir a necessidade da utilização de **variáveis, functions e mixins SASS**, no arquivo em que eles serão
-utilizados importar:
+utilizados, importar:
 
 ``` scss
-@import './node_modules/@mbrandao/med-components/src/medsoft/medsoft';
+@import '~@mbrandao/med-components/src/medsoft/medsoft';
 ```

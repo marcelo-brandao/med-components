@@ -16,16 +16,16 @@ No arquivo que a utilização dos mixins sejam necessárias, importar:
 
 ## iphone-x-range()
 
-Mixin criado para estilização pontual no tamanho de tela específicos e dispositivos da **família iphone X**.
+Mixin criado para estilização pontual no tamanho de viewport específicos de dispositivos da **família iphone X**.
 Esse mixins são geralmente utilizados para ajustar a altura do header devido ao **[chanfrado](https://support.apple.com/en-ca/HT207354)**
 presente nesses dispositivos, e se for o caso, deve ser utilizado em conjunto com as
-**[variáveis SASS](http://desenv.ordomederi.com/med-components/?path=/story/medsoft-variables--page)**, como mostra o
-exemplo abaixo.
+**[variáveis SASS](http://desenv.ordomederi.com/med-components/?path=/story/medsoft-variables--page)** específicas
+do medsoft, como mostra o exemplo abaixo.
 
 **Exemplo:** _Ajuste no header quando a aplicação estiver sendo executada nos dispositivos da família iphone X:_
 
 ```scss
-.header {
+.class {
   @include iphone-x-range {
     padding-top: $med-iphone-x-top;
   }
