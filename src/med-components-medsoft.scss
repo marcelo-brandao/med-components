@@ -1,6 +1,5 @@
-// global
-@import "./med-components";
+@import "./global/global";
+@import "./tokens/tokens";
+@import "./grid/grid";
 
-// medsoft
-@import "./medsoft/variables";
-@import "./medsoft/mixins";
+@import "./medsoft/medsoft";

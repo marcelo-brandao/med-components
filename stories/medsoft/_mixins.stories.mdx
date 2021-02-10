@@ -4,25 +4,27 @@ import { Meta } from "@storybook/addon-docs/blocks";
 
 # Mixins
 
-## iphone-x-range
+Mixins utilizados **apenas** na aplicação **medsoft**.
 
-Define uma rule `@media` que abrange os dispositivos da família iphone X:
+## Utilização
 
-```scss
-@mixin iphone-x-range {
-  @media (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait),
-    (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait),
-    (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait) {
-    @content;
-  }
-}
+No arquivo que a utilização dos mixins sejam necessárias, importar:
+
+``` scss
+@import './node_modules/@mbrandao/med-components/src/medsoft/medsoft';
 ```
 
-**Exemplo:** Ajuste no header quando a aplicação estiver sendo executada nos dispositivos da família iphone X:
+## iphone-x-range()
+
+Mixin criado para estilização pontual no tamanho de tela específicos e dispositivos da **família iphone X**.
+Esse mixins são geralmente utilizados para ajustar a altura do header devido ao **[chanfrado](https://support.apple.com/en-ca/HT207354)**
+presente nesses dispositivos, e se for o caso, deve ser utilizado em conjunto com as
+**[variáveis SASS](http://desenv.ordomederi.com/med-components/?path=/story/medsoft-variables--page)**, como mostra o
+exemplo abaixo.
+
+**Exemplo:** _Ajuste no header quando a aplicação estiver sendo executada nos dispositivos da família iphone X:_
 
 ```scss
-@import "./theme/abstracts/mixin-devices";
-
 .header {
   @include iphone-x-range {
     padding-top: $med-iphone-x-top;
@@ -30,7 +32,7 @@ Define uma rule `@media` que abrange os dispositivos da família iphone X:
 }
 ```
 
-## platform
+## platform()
 
 Para mobile o mixin utiliza as classes:
 
