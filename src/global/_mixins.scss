@@ -1,6 +1,6 @@
-/*
-* breakpoints
-*/
+//
+// breakpoints
+//
 
 @mixin breakpoint-up($name, $breakpoints: $med-grid-breakpoints) {
   $min: breakpoint-min($name, $breakpoints);
@@ -55,9 +55,9 @@
   }
 }
 
-/*
-* tipografia
-*/
+//
+// tipografia
+//
 
 @mixin font-face($font-name, $font-path, $weight, $style, $svg-id) {
   @font-face {
@@ -71,9 +71,9 @@
   }
 }
 
-/*
-* utils
-*/
+//
+// utils
+//
 
 @mixin landscape($orientation: landscape) {
   @media screen and (orientation: $orientation) {

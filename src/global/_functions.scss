@@ -1,6 +1,6 @@
-/*
-* breakpoints
-*/
+//
+// breakpoints
+//
 
 // private
 
@@ -34,9 +34,9 @@
   @return if(breakpoint-min($name, $breakpoints) == null, "", "-#{$name}");
 }
 
-/*
-* tipografia
-*/
+//
+// tipografia
+//
 
 @function line-height($font-size: $med-font-size-xs) {
   $line-height: ceil(strip-unit($font-size) * 1.3);

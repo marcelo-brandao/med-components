@@ -17,11 +17,7 @@
   --med-color-brand-primary-lightest: #b0ecf5;
   --med-color-brand-primary-lightest-rgb: 176, 236, 245;
 
-  --med-color-brand-primary-gradient: linear-gradient(
-    to bottom,
-    var(--med-color-brand-primary-medium),
-    var(--med-color-brand-primary-dark)
-  );
+  --med-color-brand-primary-gradient: linear-gradient(to bottom, var(--med-color-brand-primary-medium), var(--med-color-brand-primary-dark));
 
   // aula color
   --med-color-aula-darkest: #075344;
@@ -135,11 +131,7 @@
   --med-color-neutral-light-10: #adadad;
   --med-color-neutral-light-10-rgb: 173, 173, 173;
 
-  --med-color-neutral-gradient: linear-gradient(
-    to bottom,
-    var(--med-color-neutral-dark-prime),
-    var(--med-color-neutral-light-prime)
-  );
+  --med-color-neutral-gradient: linear-gradient(to bottom, var(--med-color-neutral-dark-prime), var(--med-color-neutral-light-prime));
 
   // feedback warning color
   --med-color-feedback-warning-darkest: #504606;
