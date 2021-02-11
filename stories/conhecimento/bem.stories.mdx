@@ -15,6 +15,15 @@ Resumo da documentação oficial presente em **[BEM Methodology Documentation](h
 - **[Entidade Bloco]()**
   - **[Nomenclatura]()**
   - **[Features]()**
+  - **[Exemplo]()**
+- **[Entidade Elemento]()**
+  - **[Nomenclatura]()**
+  - **[Features]()**
+  - **[Exemplo]()**
+- **[Entidade Modificador]()**
+  - **[Nomenclatura]()**
+  - **[Features]()**
+  - **[Exemplo]()**
 
 ## Notas
 
@@ -25,7 +34,7 @@ uso da metodologia aplicada apenas a nomenclatura de classes CSS.
 
 Blocos, elementos, e modificadores são todos chamados de **entidades BEM**.
 
-Ao fornecer convenções de nomenclatura para classes CSS A metodologia:
+Ao fornecer convenções de nomenclatura para classes CSS a metodologia:
 - Evita colisões de nomes, fornecendo nomes exclusivos
 - Evita problemas de especificidade de CSS, limitando ou removendo totalmente a necessidade de cascatas
 
@@ -36,8 +45,8 @@ O nome de uma entidade BEM na abordagem clássica deve:
 - Ser único.
 - Transmitir um significado.
 - Ser escrito em caracteres minúsculos.
-- Ser separado por um hífen **-** se for composto.
-- `block-name__elem-name_mod-name_mod-val`.
+- Ser separado por um hífen **(-)** se for composto.
+- `block-name__elem-name_mod-name_mod-val`
 
 Existem convenções e regras alternativas de nomes que são usadas na comunidade BEM, como:
 
@@ -48,7 +57,7 @@ Existem convenções e regras alternativas de nomes que são usadas na comunidad
 
 A documentação oficial especifica que você pode criar sua própria nomenclatura personalizada para entidades BEM, uma vez que seja possível separar blocos de elementos e modificadores de maneira programática.
 
-**No medgrupo utilizamos a variação dois traços: `block-name__elem-name--mod-name--mod-val`**
+**⚠️ No medgrupo utilizamos a variação dois traços: `block-name__elem-name--mod-name--mod-val`**
 
 ### Features
 
@@ -69,9 +78,134 @@ O nome do bloco deve:
 
 - Define o namespace para seus elementos e modificadores.
 - Descreve sua finalidade (_o que é? Um cabeçalho? Um botão?_).
-- Ser separados por um hífen **-** se for composto.
+- Ser separados por um hífen **(-)** se for composto.
 
 ### Features
 
 - Os blocos podem ser aninhados.
 - Um bloco não deve definir nenhuma geometria ou posicionamento externo (_margin, position_).
+
+### Exemplo
+
+```html
+<body class="page">
+  <header class="header page__header">...</header>
+  <footer class="footer page__footer">...</footer>
+</body>
+```
+
+```css
+.page { ... }
+.page__header { ... }
+.page__footer { ... }
+
+.header { ... }
+.footer { ... }
+```
+
+## Entidade Elemento
+
+Um elemento:
+
+- É uma parte composta de um bloco não pode ser usado separadamente dele.
+- Deve ser criado se uma seção de código não puder ser usada separadamente sem a entidade pai.
+
+### Nomenclatura
+
+O nome do elemento deve:
+
+- Descrever sua finalidade (_o que é? Um item? Um texto?_).
+- Ser separado do nome do bloco por um sublinhado duplo **(__)**.
+  - `block-name__element-name`
+- **Não definir uma hierarquia como:**
+  - `block-name__elem-name__elem-name`
+
+### Features
+
+- Os elementos podem ser aninhados.
+
+### Exemplo
+
+```html
+<header class="header">
+  <nav class="nav">
+    <ul class="nav__list">
+      <li class="nav__item">
+        <a class="nav__link"></a>
+      </li>
+      <li class="nav__item">
+        <a class="nav__link"></a>
+      </li>
+      <li class="nav__item">
+        <a class="nav__link"></a>
+      </li>
+    </ul>
+  </nav>
+</header>
+```
+
+```css
+.header { ... }
+
+.nav { ... }
+.nav__list { ... }
+.nav__item { ... }
+.nav__link { ... }
+```
+
+## Entidade Modificador
+
+Um modificador:
+
+- É uma entidade que define a **aparência**, **estado** ou **comportamento** de um bloco ou elemento.
+
+### Nomenclatura
+
+O nome do modificador deve:
+
+- Descrever sua finalidade (_o que é? Um item? Um texto?_).
+- O nome do modificador é separado do nome do **bloco** ou **elemento** por um único sublinhado **(_)**.
+  - `block-name_modifier-name`
+  - `block-name__element-name_modifier-name`
+- O **valor** do modificador é separado do **nome** do modificador por um único sublinhado **(_)**.
+  - `block-name_modifier-name_modifier-value`
+  - `block-name__element-name_modifier-name_modifier-value`
+- Para modificadores booleanos, o **valor** não é incluído no nome.
+  - `block-name_active`
+
+**⚠️Lembrando que nós utilamos a variação dois traços: `block-name__elem-name--mod-name--mod-val`**
+
+### Features
+
+- Um modificador não pode ser usado sozinho.
+
+### Exemplo
+
+```html
+<header class="header">
+  <nav class="nav">
+    <ul class="nav__list">
+      <li class="nav__item">
+        <a class="nav__link nav__link_active nav__link_size_small"></a>
+      </li>
+      <li class="nav__item">
+        <a class="nav__link"></a>
+      </li>
+      <li class="nav__item">
+        <a class="nav__link"></a>
+      </li>
+    </ul>
+  </nav>
+</header>
+```
+
+```css
+.header { ... }
+
+.nav { ... }
+.nav__list { ... }
+.nav__item { ... }
+.nav__link { ... }
+.nav__link_active { ... }
+.nav__link_size_small { ... }
+```
