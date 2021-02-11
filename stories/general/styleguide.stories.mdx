@@ -2,18 +2,18 @@ import { Meta } from "@storybook/addon-docs/blocks";
 
 <Meta title="General/Styleguide" />
 
-# CSS/SASS Styleguide 🚧🚧🚧
+# 🦮 CSS/SASS Styleguide 🚧🚧🚧
 
 Para promover um padrão mínimo entre as aplicações do medgrupo, é necessária o uso de um styleguide.
 
-## Conteúdo
+## 🗂️ Conteúdo
 
 - **[Padrão de Nomenclatura]()**
 - **[Formatação]()**
   - **[Files]()**
   - **[Regras CSS]()**
 
-## Padrão de Nomenclatura
+## 📍 Padrão de Nomenclatura
 
 As aplicações do medgrupo utilizam a **[metodologia BEM](https://en.bem.info/methodology/quick-start/)** para padronizar a nomenclatura
 dos seletores CSS. A metodologia é amplamente utilizada na comunidade e se **utilizada de forma correta** promove:
@@ -23,7 +23,7 @@ dos seletores CSS. A metodologia é amplamente utilizada na comunidade e se **ut
 - Menor especificidade e agrupamento de regras e proriedades CSS
 - A construção de estilos escaláveis
 
-## Formatação
+## 📍 Formatação
 
 Não é necessária a formatação manual. Os linters o fazem automaticamente, por isso a necessidade do uso obrigatório de algumas
 **[extensões]()** do VS Code.
@@ -46,18 +46,20 @@ Não é necessária a formatação manual. Os linters o fazem automaticamente, p
 - Utilizar **um espaço** depois de **:** nas declarações CSS
 - Utilizar **uma linha** em branco entre Regras CSS
 
-### Ruim
+## 💡 Exemplo
 
 ```scss
+// > Não faça isso!!!
+
 #classeComposta{color:#000;}
 #nao, .nops, nao_e_bom, [data-necessario] {
   color: #000;
 }
 ```
 
-### Bom
-
 ```scss
+// > Ai sim!!!
+
 .classe-composta {
   color: #000;
 }
