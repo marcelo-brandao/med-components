@@ -4,7 +4,8 @@ export const parameters = {
   options: {
     storySort: {
       order: [
-        'General', ['Welcome', 'Biblioteca', 'Padrões'],
+        'General', ['Welcome', 'Biblioteca', 'Arquitetura', 'Styleguide'],
+        'Conhecimento', ['Metodologia BEM'],
         'Tokens', ['Tokens', 'Cores', 'Tipografia', 'Espacamento', 'Complementares', 'Exemplo'],
         'Global', ['Variables'],
         'Medsoft', ['Arquitetura', 'Variables', 'Mixins'],

@@ -1,0 +1,71 @@
+import { Meta } from "@storybook/addon-docs/blocks";
+
+<Meta title="General/Styleguide" />
+
+# CSS/SASS Styleguide
+
+Para promover um padrão mínimo entre as aplicações do medgrupo, é necessária o uso de um styleguide.
+
+## Conteúdo
+
+- **[Padrão de Nomenclatura]()**
+- **[Formatação]()**
+  - **[Files]()**
+  - **[Regras CSS]()**
+
+## Padrão de Nomenclatura
+
+As aplicações do medgrupo utilizam a **[metodologia BEM](https://en.bem.info/methodology/quick-start/)** para padronizar a nomenclatura
+dos seletores CSS. A metodologia é amplamente utilizada na comunidade e promove:
+
+- Relações claras e estritas entre HTML e CSS
+- A criação de componentes reutilizáveis
+- Menor especificidade e agrupamento de regras e proriedades CSS
+- A construção de estilos escaláveis
+
+## Formatação
+
+Não é necessária a formatação manual. Os linters o fazem automaticamente, por isso a necessidade do uso obrigatório de algumas
+**[extensões]()** do VS Code.
+
+### Files
+
+- Utilizar padrão de fim de linha **LF**
+- Utilizar Identação com **espaços**
+- Utilizar **2 espaços** para identação
+- Utilizar **uma linha** em branco ao final do arquivo
+- Remover **espaços em branco** que precedam caracteres de nova linha
+
+### Regras CSS
+
+- Utilizar **-** para separar palavras compostas
+- Utilizar, quando possível, seletores CSS referênciando **classes**
+- Mesmo que a regra tenha apenas uma declaração CSS, ela **não deve** ser escrita em **uma única linha**
+- Múltiplos seletores em uma regra CSS devem estar declarados cada um em **uma linha**
+- Utilizar **um espaço** antes da abertura de chaves **{** nas regras CSS
+- Utilizar **um espaço** depois de **:** nas declarações CSS
+- Utilizar **uma linha** em branco entre Regras CSS
+
+### Ruim
+
+```scss
+#classeComposta{color:#000;}
+#nao, .nops, nao_e_bom, [data-necessario] {
+  color: #000;
+}
+```
+
+### Bom
+
+```scss
+.classe-composta {
+  color: #000;
+}
+
+.no,
+.nops,
+.nao-e-bom,
+[data-necessario] {
+  color: #000;
+}
+```
