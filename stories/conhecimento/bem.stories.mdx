@@ -4,3 +4,74 @@ import { Meta } from "@storybook/addon-docs/blocks";
 
 # Metodologia BEM 🚧🚧🚧
 
+Resumo da documentação oficial presente em **[BEM Methodology Documentation](https://en.bem.info/methodology/quick-start/)**.
+
+## Conteúdo
+
+- **[Notas]()**
+- **[Geral]()**
+  - **[Convenção de Nomenclatura]()**
+  - **[Features]()**
+- **[Entidade Bloco]()**
+  - **[Nomenclatura]()**
+  - **[Features]()**
+
+## Notas
+
+Embora a metodologia tenha todo um **[ecossistema](https://en.bem.info/)** em torno dela, essas seção cobre o
+uso da metodologia aplicada apenas a nomenclatura de classes CSS.
+
+## Geral
+
+Blocos, elementos, e modificadores são todos chamados de **entidades BEM**.
+
+Ao fornecer convenções de nomenclatura para classes CSS A metodologia:
+- Evita colisões de nomes, fornecendo nomes exclusivos
+- Evita problemas de especificidade de CSS, limitando ou removendo totalmente a necessidade de cascatas
+
+### Convenção de Nomenclatura
+
+O nome de uma entidade BEM na abordagem clássica deve:
+
+- Ser único.
+- Transmitir um significado.
+- Ser escrito em caracteres minúsculos.
+- Ser separado por um hífen **-** se for composto.
+- `block-name__elem-name_mod-name_mod-val`.
+
+Existem convenções e regras alternativas de nomes que são usadas na comunidade BEM, como:
+
+- Estilo de dois traços: `block-name__elem-name--mod-name--mod-val`.
+- Camelcase style: `blockName-elemName_modName_modVal`.
+- React style: `BlockName-ElemName_modName_modVal`.
+- Sem estilo de namespace: onde o nome do bloco ou elemento não é incluído antes do modificador.
+
+A documentação oficial especifica que você pode criar sua própria nomenclatura personalizada para entidades BEM, uma vez que seja possível separar blocos de elementos e modificadores de maneira programática.
+
+**No medgrupo utilizamos a variação dois traços: `block-name__elem-name--mod-name--mod-val`**
+
+### Features
+
+- As entidades de bloco e elemento podem ser aninhadas.
+- Apenas atributos de classe devem ser usados ​​para fazer referência a uma entidade BEM.
+- Os seletores não devem ser aninhados ou combinados.
+
+## Entidade Bloco
+
+Um bloco:
+
+- É um componente logicamente e funcionalmente independente.
+- Deve ser criado se puder ser reutilizado e não depender de nada.
+
+### Nomenclatura
+
+O nome do bloco deve:
+
+- Define o namespace para seus elementos e modificadores.
+- Descreve sua finalidade (_o que é? Um cabeçalho? Um botão?_).
+- Ser separados por um hífen **-** se for composto.
+
+### Features
+
+- Os blocos podem ser aninhados.
+- Um bloco não deve definir nenhuma geometria ou posicionamento externo (_margin, position_).
