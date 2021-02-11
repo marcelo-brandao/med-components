@@ -4,7 +4,7 @@ export const parameters = {
   options: {
     storySort: {
       order: [
-        'General', ['Introdução', 'Biblioteca', 'Padrões'],
+        'General', ['Welcome', 'Biblioteca', 'Padrões'],
         'Tokens', ['Introdução', 'Cores', 'Tipografia', 'Espacamento', 'Complementares', 'Exemplo'],
         'Global', ['Variables'],
         'Medsoft', ['Arquitetura', 'Variables', 'Mixins'],
