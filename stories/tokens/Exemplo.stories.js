@@ -6,7 +6,7 @@ export default {
 };
 
 const TemplateExemplo = () => {
-  return `<h1 style="font-family: sans-serif; text-align: center;">Para visualizar clique na aba <span style="color: #3a8bd8;">Design</span> abaixo!</h1>`;
+  return `<h1 style="font-family: sans-serif; text-align: center;">⚠️ Para visualizar clique na aba <span style="color: #3a8bd8;">Design</span> abaixo!</h1>`;
 };
 
 export const Exemplo = TemplateExemplo.bind({});
