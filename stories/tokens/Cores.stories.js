@@ -23,7 +23,7 @@ const TemplateCores = () => {
         <li style="font-weight: 700; padding-bottom: 8px;"><span style="color: #FF00FF">--med-color-brand-primary-light-rgb:</span> <span style="background: #73d6e5; color: #000; padding: 2px 4px;">115, 214, 229;</li>
         <li style="font-weight: 700; padding-bottom: 8px;"><span style="color: #FF00FF">--med-color-brand-primary-lightest:</span> <span style="background: #b0ecf5; color: #000; padding: 2px 4px;">#b0ecf5;</li>
         <li style="font-weight: 700; padding-bottom: 8px;"><span style="color: #FF00FF">--med-color-brand-primary-lightest-rgb:</span> <span style="background: #b0ecf5; color: #000; padding: 2px 4px;">176, 236, 245;</li>
-        <li style="font-weight: 700; padding-bottom: 8px;"><span style="color: #FF00FF">--med-color-brand-primary-gradient:</span> linear-gradient(to bottom, var(<span style="color: #FF00FF">--med-color-brand-primary-medium</span>), var(<span style="color: #FF00FF">--med-color-brand-primary-dark</span>));</li>
+        <li style="font-weight: 700; padding-bottom: 8px;"><span style="color: #FF00FF">--med-color-brand-primary-gradient:</span> <span style="width: 111px; height: 22px; display: inline-block; position: relative; top: 6px; background-image: linear-gradient(to bottom, #3aa8b9, #074953)""></span></li>
         
         <li style="font-weight: 700; font-size: 18px; margin-bottom: 16px; color: #3a8bd8; padding-top: 32px;">Aula colors:</li>
         <li style="font-weight: 700; padding-bottom: 8px;"><span style="color: #FF00FF">--med-color-aula-darkest:</span> <span style="background: #075344; color: #fff; padding: 2px 4px;">#075344;</span></li>
@@ -109,7 +109,7 @@ const TemplateCores = () => {
         <li style="font-weight: 700; padding-bottom: 8px;"><span style="color: #FF00FF">--med-color-neutral-light-10:</span> <span style="background: #adadad; color: #000; padding: 2px 4px;">#adadad;</span></li>
         <li style="font-weight: 700; padding-bottom: 8px;"><span style="color: #FF00FF">--med-color-neutral-light-10-rgb:</span> <span style="background: #adadad; color: #000; padding: 2px 4px;">173, 173, 173;</span></li>
 
-        <li style="font-weight: 700; padding-bottom: 8px;"><span style="color: #FF00FF">--med-color-neutral-gradient:</span> linear-gradient(to bottom, var(<span style="color: #FF00FF">--med-color-neutral-dark-prime</span>), var(<span style="color: #FF00FF">--med-color-neutral-light-prime</span>));</li>
+        <li style="font-weight: 700; padding-bottom: 8px;"><span style="color: #FF00FF">--med-color-neutral-gradient:</span> <span style="width: 111px; height: 22px; display: inline-block; position: relative; top: 6px; background-image: linear-gradient(to bottom, #141414, #FAFAFA)""></span></li>
         
         <li style="font-weight: 700; font-size: 18px; margin-bottom: 16px; color: #3a8bd8; padding-top: 32px;">Feedback Warning colors:</li>
         <li style="font-weight: 700; padding-bottom: 8px;"><span style="color: #FF00FF">--med-color-feedback-warning-darkest:</span> <span style="background: #504606; color: #fff; padding: 2px 4px;">#504606;</span></li>

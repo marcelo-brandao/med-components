@@ -197,14 +197,14 @@
   --med-font-size-huge: #{$med-font-size-huge};
 
   // font weight
-  --med-font-weight-thin: 250;
-  --med-font-weight-light: 300;
-  --med-font-weight-regular: 400;
-  --med-font-weight-medium: 500;
-  --med-font-weight-semibold: 600;
-  --med-font-weight-bold: 700;
-  --med-font-weight-extrabold: 250;
-  --med-font-weight-heavy: 900;
+  --med-font-weight-thin: #{$med-font-weight-thin};
+  --med-font-weight-light: #{$med-font-weight-light};
+  --med-font-weight-regular: #{$med-font-weight-regular};
+  --med-font-weight-medium: #{$med-font-weight-medium};
+  --med-font-weight-semibold: #{$med-font-weight-semibold};
+  --med-font-weight-bold: #{$med-font-weight-bold};
+  --med-font-weight-extrabold: #{$med-font-weight-extrabold};
+  --med-font-weight-heavy: #{$med-font-weight-heavy};
 
   // line height
   --med-line-height-compressed: 100%;
@@ -320,8 +320,7 @@
   --med-shadow-level-0: none;
   --med-shadow-level-1: 0 0 2px rgba(0, 0, 0, 0.12),
     0 2px 2px rgba(0, 0, 0, 0.14), 0 1px 3px rgba(0, 0, 0, 0.2);
-  --med-shadow-level-2: 0 2px 4px rgba(0, 0, 0, 0.14),
-    0 3px 4px rgba(0, 0, 0, 0.12), 0 1px 5px rgba(0, 0, 0, 0.2);
+  --med-shadow-level-2: 
   --med-shadow-level-3: 0 3px 3px rgba(0, 0, 0, 0.14),
     0 3px 4px rgba(0, 0, 0, 0.12), 0 1px 8px rgba(0, 0, 0, 0.2);
   --med-shadow-level-4: 0 0 2px rgba(0, 0, 0, 0.14),
