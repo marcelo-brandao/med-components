@@ -1,7 +1,7 @@
 @import './button';
 
 :host {
-  --background: var(--med-color-brand-primary-medium);
+  --background: #{$med-color-brand-primary-medium};
   --border-radius: 22px;
   --padding: 0 22px;
   --transition: color 150ms ease-in-out, background-color 150ms ease-in-out, border 150ms ease-in-out, border-radius 150ms ease-in-out, box-shadow 150ms ease-in-out;
@@ -20,12 +20,12 @@
 // hover
 @media (any-hover: hover) {
   :host(:hover) {
-    --background: var(--med-color-aula-darkest);
+    --background: #{$med-color-aula-darkest};
   }
 }
 
 :host(.med-focused) {
-  --background: var(--med-color-material-darkest);
+  --background: #{$med-color-material-darkest};
 }
 
 :host(.med-activated) {
