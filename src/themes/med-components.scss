@@ -1,4 +1,6 @@
-@import "./global/global";
-@import "./tokens/tokens";
+@import './private/private';
 
-@import "./grid/grid";
+@import './global/global';
+@import './tokens/tokens';
+
+@import './grid/grid';
