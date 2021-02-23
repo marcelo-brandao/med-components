@@ -6,20 +6,34 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
-
+    interface MedButton {
+        "href": string | undefined;
+    }
 }
 declare global {
+    interface HTMLMedButtonElement extends Components.MedButton, HTMLStencilElement {
+    }
+    var HTMLMedButtonElement: {
+        prototype: HTMLMedButtonElement;
+        new (): HTMLMedButtonElement;
+    };
     interface HTMLElementTagNameMap {
+        "med-button": HTMLMedButtonElement;
     }
 }
 declare namespace LocalJSX {
+    interface MedButton {
+        "href"?: string | undefined;
+    }
     interface IntrinsicElements {
+        "med-button": MedButton;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "med-button": LocalJSX.MedButton & JSXBase.HTMLAttributes<HTMLMedButtonElement>;
         }
     }
 }

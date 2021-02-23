@@ -1,0 +1,29 @@
+:host {
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+:host {
+  .button,
+  .anchor {
+    //@include text-inherit();
+    background: var(--background);
+    border: var(--border);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    box-sizing: border-box;
+    cursor: pointer;
+    display: block;
+    height: 100%;
+    line-height: 1;
+    margin: 0;
+    padding: var(--padding);
+    position: relative;
+    transition: var(--transition);
+    width: 100%;
+  }
+}

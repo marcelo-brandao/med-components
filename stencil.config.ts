@@ -2,7 +2,8 @@ import { Config } from '@stencil/core';
 import { sass } from '@stencil/sass';
 
 export const config: Config = {
-  namespace: 'default',
+  namespace: 'med-components',
+  taskQueue: 'async',
   outputTargets: [
     {
       type: 'dist',
@@ -19,7 +20,6 @@ export const config: Config = {
       serviceWorker: null, // disable service workers
     },
   ],
-  plugins: [
-    sass()
-  ]
+  plugins: [ sass() ],
+  globalStyle: 'src/themes/med-components.scss',
 };
