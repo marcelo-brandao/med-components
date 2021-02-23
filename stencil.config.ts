@@ -20,6 +20,7 @@ export const config: Config = {
       serviceWorker: null, // disable service workers
     },
   ],
-  plugins: [ sass() ],
+  plugins: [sass()],
   globalStyle: 'src/themes/med-components.scss',
+  globalScript: 'src/global/global.ts',
 };
