@@ -7,7 +7,13 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface MedButton {
+        "ariaLabel": string;
+        "disabled": boolean;
+        "download": string | undefined;
         "href": string | undefined;
+        "rel": string | undefined;
+        "target": string | undefined;
+        "type": 'submit' | 'reset' | 'button';
     }
 }
 declare global {
@@ -23,7 +29,15 @@ declare global {
 }
 declare namespace LocalJSX {
     interface MedButton {
+        "ariaLabel"?: string;
+        "disabled"?: boolean;
+        "download"?: string | undefined;
         "href"?: string | undefined;
+        "onMedBlur"?: (event: CustomEvent<void>) => void;
+        "onMedFocus"?: (event: CustomEvent<void>) => void;
+        "rel"?: string | undefined;
+        "target"?: string | undefined;
+        "type"?: 'submit' | 'reset' | 'button';
     }
     interface IntrinsicElements {
         "med-button": MedButton;

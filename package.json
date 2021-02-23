@@ -1,7 +1,7 @@
 {
-  "name": "default",
-  "version": "0.0.1",
-  "description": "Stencil Component Starter",
+  "name": "@mbrandao/med-components",
+  "version": "1.0.8",
+  "description": "Base components for medgrupo",
   "main": "dist/index.cjs.js",
   "module": "dist/custom-elements/index.js",
   "es2015": "dist/esm/index.mjs",

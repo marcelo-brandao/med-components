@@ -1,31 +1,66 @@
 @import '../../themes/private/private';
 
+/**
+  * @prop --background: Especifica o background do med-button.
+  * @prop --border: Especifica o border do med-button.
+  * @prop --border-radius: Especifica o border-radius do med-button.
+  * @prop --box-shadow: Especifica o box-shadow do med-button.
+  * @prop --padding: Especifica o padding do med-button.
+  * @prop --transition: Especifica o transition do med-button.
+  */
+
 :host {
   display: inline-block;
+  width: auto;
+  color: var(--color, #fff);
+  font-family: var(--med-font-family-brand, inherit);
   text-align: center;
   text-decoration: none;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   user-select: none;
   vertical-align: middle;
-  white-space: nowrap;
+  vertical-align: -webkit-baseline-middle; // validar
+  pointer-events: auto;
+  font-kerning: none; // validar
 }
 
 :host {
-  .button,
-  .anchor {
+  .native {
     @include text-inherit();
-    background: var(--background);
-    border: var(--border);
+    @include font-smoothing();
+
     border-radius: var(--border-radius);
-    box-shadow: var(--box-shadow);
-    box-sizing: border-box;
-    cursor: pointer;
-    display: block;
-    height: 100%;
-    line-height: 1;
     margin: 0;
     padding: var(--padding);
+    display: block;
     position: relative;
-    transition: var(--transition);
     width: 100%;
+    height: 100%;
+    transition: var(--transition);
+    border: var(--border);
+    outline: none;
+    background: var(--background);
+    line-height: 1;
+    box-shadow: var(--box-shadow);
+    contain: layout style; //validar
+    cursor: pointer;
+    opacity: var(--opacity);
+    overflow: var(--overflow);
+    z-index: 0;
+    box-sizing: border-box;
+    appearance: none;
+  }
+
+  .inner {
+    display: flex;
+    position: relative;
+    flex-flow: row nowrap; //validar
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
   }
 }
