@@ -1,6 +1,7 @@
-import { AnimationBuilder, Mode, SpinnerTypes, TabButtonLayout } from '../interface';
+import { Mode } from './interfaces';
+import { AnimationBuilder } from '@ionic/core'
 
-export interface IonicConfig {
+export interface MedConfig {
   /**
    * When it's set to `false`, disables all animation and transition across the app.
    * Can be useful to make ionic smoother in slow devices, when animations can't run smoothly.
@@ -57,31 +58,10 @@ export interface IonicConfig {
   menuType?: string;
 
   /**
-   * Overrides the default spinner in all `<ion-spinner>` components.
-   * By default the spinner type is chosen based in the mode (ios or md).
-   */
-  spinner?: SpinnerTypes;
-
-  /**
-   * Overrides the default spinner for all `ion-loading` overlays, ie. the ones
-   * created with `ion-loading-controller`.
-   */
-  loadingSpinner?: SpinnerTypes | null;
-
-  /**
    * Overrides the default icon in all `<ion-refresh-content>` components.
    */
   refreshingIcon?: string;
 
-  /**
-   * Overrides the default spinner type in all `<ion-refresh-content>` components.
-   */
-  refreshingSpinner?: SpinnerTypes | null;
-
-  /**
-   * Overrides the default spinner type in all `<ion-infinite-scroll-content>` components.
-   */
-  infiniteLoadingSpinner?: SpinnerTypes | null;
 
   /**
    * Global switch that disables or enables "swipe-to-go-back" gesture across all
@@ -89,10 +69,6 @@ export interface IonicConfig {
    */
   swipeBackEnabled?: boolean;
 
-  /**
-   * Overrides the default "layout" of all `ion-bar-button` across the whole application.
-   */
-  tabButtonLayout?: TabButtonLayout;
 
   /**
    * Overrides the default "animation" of all `ion-nav` and `ion-router-outlet` across the whole application.
@@ -197,30 +173,3 @@ export interface IonicConfig {
   _rel?: (el: any, name: string, cb: any, opts: any) => any;
 }
 
-export const setupConfig = (config: IonicConfig) => {
-  const win = window as any;
-  const Ionic = win.Ionic;
-  if (Ionic && Ionic.config && Ionic.config.constructor.name !== 'Object') {
-    console.error('ionic config was already initialized');
-    return;
-  }
-  win.Ionic = win.Ionic || {};
-  win.Ionic.config = {
-    ...win.Ionic.config,
-    ...config
-  };
-  return win.Ionic.config;
-};
-
-export const getMode = (): Mode => {
-  const win = window as any;
-  const config = win && win.Ionic && win.Ionic.config;
-  if (config) {
-    if (config.mode) {
-      return config.mode;
-    } else {
-      return config.get('mode');
-    }
-  }
-  return 'md';
-};

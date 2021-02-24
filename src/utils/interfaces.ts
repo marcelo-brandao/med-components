@@ -13,6 +13,8 @@ export interface ButtonInterface {
 export type CssClassMap = { [className: string]: boolean };
 export type ComponentRef = Function | HTMLElement | string | null;
 export type ComponentProps<T = null> = { [key: string]: any };
+export type Mode = "ios";
+
 
 //Todo: Achamos que não há necessidade dessa implementação, conforme cenario foi relatado em Notes.md
 export interface FrameworkDelegate {

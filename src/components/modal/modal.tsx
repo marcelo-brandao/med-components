@@ -1,8 +1,12 @@
-import { Component, Host, h, Prop, Method, Element } from '@stencil/core';
+import { Component, Host, h, Prop, Method, Element, writeTask } from '@stencil/core';
 import { getClassMap } from '../../utils/theme';
 import { ComponentProps, FrameworkDelegate, ComponentRef } from '../../utils/interfaces';
 import { attachComponent } from '../../utils/framework';
 import { deepReady } from '../../utils/transition';
+
+
+import { iosEnterAnimation } from './animations/ios.enter';
+import { iosLeaveAnimation } from './animations/ios.leave';
 
 @Component({
   tag: 'med-modal',
@@ -63,9 +67,9 @@ export class MedModal {
     this.usersElement = await attachComponent(this.delegate, container, this.component, ['ion-page'], componentProps);
     await deepReady(this.usersElement);
 
-    // writeTask(() => this.el.classList.add('show-modal'));
+    writeTask(() => this.el.classList.add('show-modal'));
 
-    // await present(this, 'modalEnter', iosEnterAnimation, mdEnterAnimation, this.presentingElement);
+    await present(this, 'modalEnter', iosEnterAnimation, this.presentingElement);
 
     // if (this.swipeToClose) {
     //   this.initSwipeToClose();
