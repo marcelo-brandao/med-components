@@ -5,6 +5,7 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { ComponentProps, FrameworkDelegate } from "./utils/interfaces";
 export namespace Components {
     interface MedButton {
         "ariaLabel": string;
@@ -15,6 +16,25 @@ export namespace Components {
         "target": string | undefined;
         "type": 'submit' | 'reset' | 'button';
     }
+    interface MedModal {
+        /**
+          * The data to pass to the modal component.
+         */
+        "componentProps"?: ComponentProps;
+        /**
+          * Additional classes to apply for custom CSS. If multiple classes are provided they should be separated by spaces.
+         */
+        "cssClass"?: string | string[];
+        "delegate"?: FrameworkDelegate;
+        /**
+          * Present the modal overlay after it has been created.
+         */
+        "present": () => Promise<void>;
+        /**
+          * The element that presented the modal. This is used for card presentation effects and for stacking multiple modals on top of each other. Only applies in iOS mode.
+         */
+        "presentingElement"?: HTMLElement;
+    }
 }
 declare global {
     interface HTMLMedButtonElement extends Components.MedButton, HTMLStencilElement {
@@ -23,8 +43,15 @@ declare global {
         prototype: HTMLMedButtonElement;
         new (): HTMLMedButtonElement;
     };
+    interface HTMLMedModalElement extends Components.MedModal, HTMLStencilElement {
+    }
+    var HTMLMedModalElement: {
+        prototype: HTMLMedModalElement;
+        new (): HTMLMedModalElement;
+    };
     interface HTMLElementTagNameMap {
         "med-button": HTMLMedButtonElement;
+        "med-modal": HTMLMedModalElement;
     }
 }
 declare namespace LocalJSX {
@@ -39,8 +66,24 @@ declare namespace LocalJSX {
         "target"?: string | undefined;
         "type"?: 'submit' | 'reset' | 'button';
     }
+    interface MedModal {
+        /**
+          * The data to pass to the modal component.
+         */
+        "componentProps"?: ComponentProps;
+        /**
+          * Additional classes to apply for custom CSS. If multiple classes are provided they should be separated by spaces.
+         */
+        "cssClass"?: string | string[];
+        "delegate"?: FrameworkDelegate;
+        /**
+          * The element that presented the modal. This is used for card presentation effects and for stacking multiple modals on top of each other. Only applies in iOS mode.
+         */
+        "presentingElement"?: HTMLElement;
+    }
     interface IntrinsicElements {
         "med-button": MedButton;
+        "med-modal": MedModal;
     }
 }
 export { LocalJSX as JSX };
@@ -48,6 +91,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "med-button": LocalJSX.MedButton & JSXBase.HTMLAttributes<HTMLMedButtonElement>;
+            "med-modal": LocalJSX.MedModal & JSXBase.HTMLAttributes<HTMLMedModalElement>;
         }
     }
 }
