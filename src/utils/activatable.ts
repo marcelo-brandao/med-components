@@ -1,62 +1,54 @@
-const ACTIVATED = 'med-activated';
-const ACTIVATABLE = 'med-activatable';
-
-const ADD_ACTIVATED_TIMEOUT = 150;
-const CLEAR_ACTIVATED_TIMEOUT = 150;
-const MOUSE_WAIT = 2500;
-
-export const now = (event: Event): number => {
-  return event.timeStamp || Date.now();
-};
+import { CONSTANTS } from '../utils/constants';
+import { now } from '../utils/helpers';
 
 export const onActivatable = () => {
   let activatableElement: HTMLElement;
-  let activeTimeout: ReturnType<typeof setTimeout>;
+  let activeDefer: ReturnType<typeof setTimeout>;
   let lastActivated = 0;
-  let lastTouch = -MOUSE_WAIT * 10;
+  let lastTouch = -CONSTANTS.MOUSE_WAIT * 10;
 
-  const clearTimeouts = new WeakMap<HTMLElement, ReturnType<typeof setTimeout>>();
+  const clearDefers = new WeakMap<HTMLElement, ReturnType<typeof setTimeout>>();
 
   const getActivatableElement = (event: MouseEvent | TouchEvent): HTMLElement => {
     if (event.composedPath) {
       const path = event.composedPath() as HTMLElement[];
 
       // remove Window e #document do retorno do composedPath.
-      for (let i = 0; i < path.length - 2; i += 1) {
+      for (let i = 0; i < path.length - 2; i++) {
         const element = path[i];
 
-        if (element.classList && element.classList.contains(ACTIVATABLE)) {
+        if (element.classList && element.classList.contains(CONSTANTS.ACTIVATABLE)) {
           return element;
         }
       }
     } else {
-      return (event.target as HTMLElement).closest(`${ACTIVATABLE}`);
+      return (event.target as HTMLElement).closest(`${CONSTANTS.ACTIVATABLE}`);
     }
   };
 
   const removeActivated = (smooth: boolean): void => {
     const active = activatableElement;
-    const time = CLEAR_ACTIVATED_TIMEOUT - Date.now() + lastActivated;
+    const time = CONSTANTS.CLEAR_ACTIVATED_DEFERS - Date.now() + lastActivated;
 
     if (!active) {
       return;
     }
 
     if (smooth && time > 0) {
-      const timeId = setTimeout(() => {
-        active.classList.remove(ACTIVATED);
-        clearTimeouts.delete(active);
-      }, CLEAR_ACTIVATED_TIMEOUT);
+      const deferId = setTimeout(() => {
+        active.classList.remove(CONSTANTS.ACTIVATED);
+        clearDefers.delete(active);
+      }, CONSTANTS.CLEAR_ACTIVATED_DEFERS);
 
-      clearTimeouts.set(active, timeId);
+      clearDefers.set(active, deferId);
     } else {
-      active.classList.remove(ACTIVATED);
+      active.classList.remove(CONSTANTS.ACTIVATED);
     }
   };
 
   const addActivated = (element: HTMLElement): void => {
     lastActivated = Date.now();
-    element.classList.add(ACTIVATED);
+    element.classList.add(CONSTANTS.ACTIVATED);
   };
 
   const setActivatedElement = (element: HTMLElement): void => {
@@ -64,16 +56,16 @@ export const onActivatable = () => {
       return;
     }
 
-    clearTimeout(activeTimeout);
-    activeTimeout = undefined;
+    clearTimeout(activeDefer);
+    activeDefer = undefined;
 
     // desativa selecionado.
     if (activatableElement) {
-      if (clearTimeouts.has(activatableElement)) {
-        throw new Error('internal error');
+      if (clearDefers.has(activatableElement)) {
+        throw new Error('Internal error');
       }
 
-      if (!activatableElement.classList.contains(ACTIVATED)) {
+      if (!activatableElement.classList.contains(CONSTANTS.ACTIVATED)) {
         addActivated(activatableElement);
       }
 
@@ -82,57 +74,56 @@ export const onActivatable = () => {
 
     // ativa selecionado.
     if (element) {
-      const timeId = clearTimeouts.get(element);
+      const deferId = clearDefers.get(element);
 
-      if (timeId) {
-        clearTimeout(timeId);
-        clearTimeouts.delete(element);
+      if (deferId) {
+        clearTimeout(deferId);
+        clearDefers.delete(element);
       }
 
-      element.classList.remove(ACTIVATED);
+      element.classList.remove(CONSTANTS.ACTIVATED);
 
-      activeTimeout = setTimeout(() => {
+      activeDefer = setTimeout(() => {
         addActivated(element);
-        activeTimeout = undefined;
-      }, ADD_ACTIVATED_TIMEOUT);
+        activeDefer = undefined;
+      }, CONSTANTS.ADD_ACTIVATED_DEFERS);
     }
 
     activatableElement = element;
   };
 
-  const down = (event: MouseEvent | TouchEvent): void => {
+  const pointerDown = (event: MouseEvent | TouchEvent): void => {
     setActivatedElement(getActivatableElement(event));
   };
 
-  const up = (): void => {
+  const pointerUp = (): void => {
     setActivatedElement(undefined);
   };
 
   const onTouchStart = (event: TouchEvent): void => {
     lastTouch = now(event);
-    down(event);
+    pointerDown(event);
   };
 
   const onTouchEnd = (event: TouchEvent): void => {
     lastTouch = now(event);
-    up();
+    pointerUp();
   };
 
   const onMouseDown = (event: MouseEvent): void => {
-    event.preventDefault();
-    const time = now(event) - MOUSE_WAIT;
+    const time = now(event) - CONSTANTS.MOUSE_WAIT;
 
     if (lastTouch < time) {
-      down(event);
+      pointerDown(event);
     }
   };
 
   const onMouseUp = (event: MouseEvent): void => {
     event.preventDefault();
-    const time = now(event) - MOUSE_WAIT;
+    const time = now(event) - CONSTANTS.MOUSE_WAIT;
 
     if (lastTouch < time) {
-      up();
+      pointerUp();
     }
   };
 

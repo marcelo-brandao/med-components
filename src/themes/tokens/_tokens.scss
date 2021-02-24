@@ -180,8 +180,8 @@
   --med-color-feedback-success-lightest-rgb: #{$med-color-feedback-success-lightest-rgb};
 
   // font family
-  --med-font-family-brand: 'fsemeric';
-  --med-font-family-base: 'fsemeric';
+  --med-font-family-brand: #{$med-font-family-brand};
+  --med-font-family-base: #{$med-font-family-base};
 
   // font size
   --med-font-size-nano: #{$med-font-size-nano};

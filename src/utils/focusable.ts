@@ -1,26 +1,24 @@
-const FOCUSED = 'med-focused';
-const FOCUSABLE = 'med-focusable';
-const FOCUS_KEYS = ['Tab', 'Space', 'Escape', 'Shift', 'Enter', 'ArrowUp', 'ArrowRight', 'ArrowDown', 'ArrowLeft', ' '];
+import { CONSTANTS } from '../utils/constants';
 
 export const onFocusable = () => {
   let currentFocus: Element[] = [];
   let keyboardMode = true;
 
   const setFocus = (elements: Element[]) => {
-    currentFocus.forEach(element => element.classList.remove(FOCUSED));
+    currentFocus.forEach(element => element.classList.remove(CONSTANTS.FOCUSED));
 
-    elements.forEach(el => el.classList.add(FOCUSED));
+    elements.forEach(el => el.classList.add(CONSTANTS.FOCUSED));
 
     currentFocus = elements;
   };
 
-  const down = () => {
+  const pointerDown = () => {
     keyboardMode = false;
     setFocus([]);
   };
 
   document.addEventListener('keydown', (event: KeyboardEvent) => {
-    keyboardMode = FOCUS_KEYS.includes(event.key);
+    keyboardMode = CONSTANTS.FOCUS_KEYS.includes(event.key);
 
     if (!keyboardMode) {
       setFocus([]);
@@ -31,7 +29,7 @@ export const onFocusable = () => {
     if (keyboardMode && event.composedPath) {
       const toFocus = event.composedPath().filter((element: HTMLElement) => {
         if (element.classList) {
-          return element.classList.contains(FOCUSABLE);
+          return element.classList.contains(CONSTANTS.FOCUSABLE);
         }
         return false;
       }) as Element[];
@@ -46,7 +44,6 @@ export const onFocusable = () => {
     }
   });
 
-  document.addEventListener('touchstart', down);
-
-  document.addEventListener('mousedown', down);
+  document.addEventListener('touchstart', pointerDown);
+  document.addEventListener('mousedown', pointerDown);
 };
