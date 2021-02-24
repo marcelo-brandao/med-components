@@ -7,6 +7,8 @@
   * @prop --box-shadow: Especifica o box-shadow do med-button.
   * @prop --padding: Especifica o padding do med-button.
   * @prop --transition: Especifica o transition do med-button.
+  * @prop --color: Especifica a cor do med-button.
+  * @prop --font-size: Especifica o tamanho da fonte do med-button.
   */
 
 :host {
@@ -65,22 +67,23 @@
   }
 }
 
-:host {
-  --background: #{$med-color-brand-primary-medium};
-  --border-radius: 22px;
-  --padding: 0 22px;
-  --transition: color 150ms ease-in-out, background-color 150ms ease-in-out, border 150ms ease-in-out, border-radius 150ms ease-in-out, box-shadow 150ms ease-in-out;
+/**
+  * default state
+  */
 
-  color: #fff;
+:host {
+  --background: #{$med-color-brand-primary-gradient};
+  --border: 2px solid #{$med-border-width-none};
+  --border-radius: #{$med-border-radius-pill};
+  --padding: #{$med-spacing-squish-lg};
+  --transition: color 150ms ease-in-out, background-color 150ms ease-in-out, border 150ms ease-in-out, border-radius 150ms ease-in-out, box-shadow 150ms ease-in-out;
+  --color: #fff;
+
   font-size: 14px;
   font-weight: 700;
   height: 44px;
   text-transform: uppercase;
 }
-
-/**
-  * default state
-  */
 
 // hover
 @media (any-hover: hover) {
