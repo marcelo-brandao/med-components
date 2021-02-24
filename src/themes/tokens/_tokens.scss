@@ -21,7 +21,7 @@
   --med-color-aula-darkest: #{$med-color-aula-darkest};
   --med-color-aula-darkest-rgb: #{$med-color-aula-darkest-rgb};
 
-  --med-color-aula-dark: #{$med-color-aula-dark:};
+  --med-color-aula-dark: #{$med-color-aula-dark};
   --med-color-aula-dark-rgb: #{$med-color-aula-dark-rgb};
 
   --med-color-aula-medium: #{$med-color-aula-medium};
@@ -164,7 +164,7 @@
   --med-color-feedback-error-lightest-rgb: #{$med-color-feedback-error-lightest-rgb};
 
   // feedback success color
-  --med-color-feedback-success-darkest: #{$med-color-feedback-success-darkest}
+  --med-color-feedback-success-darkest: #{$med-color-feedback-success-darkest};
   --med-color-feedback-success-darkest-rgb: #{$med-color-feedback-success-darkest-rgb};
 
   --med-color-feedback-success-dark: #{$med-color-feedback-success-dark};
@@ -180,8 +180,8 @@
   --med-color-feedback-success-lightest-rgb: #{$med-color-feedback-success-lightest-rgb};
 
   // font family
-  --med-font-family-brand: 'fsemeric';
-  --med-font-family-base: 'fsemeric';
+  --med-font-family-brand: #{$med-font-family-brand};
+  --med-font-family-base: #{$med-font-family-base};
 
   // font size
   --med-font-size-nano: #{$med-font-size-nano};

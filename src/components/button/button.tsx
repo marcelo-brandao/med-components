@@ -1,14 +1,14 @@
-import { Component, Host, h, Element, Prop, Event, EventEmitter } from '@stencil/core';
+import { Component, ComponentInterface, Host, h, Element, Prop, Event, EventEmitter } from '@stencil/core';
+
+import { AnchorInterface, ButtonInterface } from '../../utils/interfaces';
+import { hasShadowDom } from '../../utils/helpers';
 
 @Component({
   tag: 'med-button',
-  /* styleUrls: {
-    default: 'button.default.scss'
-  }, */
-  styleUrl: 'button.default.scss',
+  styleUrl: 'button.scss',
   shadow: true,
 })
-export class MedButton {
+export class MedButton implements ComponentInterface, AnchorInterface, ButtonInterface {
   @Element() el!: HTMLElement;
 
   @Prop() href: string | undefined;
@@ -25,9 +25,9 @@ export class MedButton {
 
   @Prop() ariaLabel: string;
 
-  @Event() medFocus: EventEmitter<void>;
+  @Event() medFocus!: EventEmitter<void>;
 
-  @Event() medBlur: EventEmitter<void>;
+  @Event() medBlur!: EventEmitter<void>;
 
   private onFocus(): void {
     this.medFocus.emit();
@@ -38,15 +38,17 @@ export class MedButton {
   }
 
   private onClick(event: Event): void {
-    const form = this.el.closest('form');
-    if (form) {
-      event.preventDefault();
-      const fakeButton = document.createElement('button');
-      fakeButton.type = this.type;
-      fakeButton.style.display = 'none';
-      form.appendChild(fakeButton);
-      fakeButton.click();
-      fakeButton.remove();
+    if (hasShadowDom(this.el)) {
+      const form = this.el.closest('form');
+      if (form) {
+        event.preventDefault();
+        const fakeButton = document.createElement('button');
+        fakeButton.type = this.type;
+        fakeButton.style.display = 'none';
+        form.appendChild(fakeButton);
+        fakeButton.click();
+        fakeButton.remove();
+      }
     }
   }
 
@@ -68,8 +70,6 @@ export class MedButton {
             ariaLabel,
           };
 
-    console.log('TagType:', TagType);
-
     return (
       <Host
         from-stencil
@@ -79,7 +79,7 @@ export class MedButton {
           'med-disabled': disabled,
         }}
         aria-disabled={disabled ? 'true' : null}
-        onClick={this.onClick}
+        onClick={this.onClick.bind(this)}
       >
         <TagType
           class="native"
