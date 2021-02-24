@@ -14,6 +14,7 @@ export const config: Config = {
     },
     {
       type: 'docs-readme',
+      footer: '*Built with ❤️ by TheOffice!*',
     },
     {
       type: 'www',

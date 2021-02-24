@@ -15,6 +15,8 @@ export namespace Components {
         "target": string | undefined;
         "type": 'submit' | 'reset' | 'button';
     }
+    interface MedModal {
+    }
 }
 declare global {
     interface HTMLMedButtonElement extends Components.MedButton, HTMLStencilElement {
@@ -23,8 +25,15 @@ declare global {
         prototype: HTMLMedButtonElement;
         new (): HTMLMedButtonElement;
     };
+    interface HTMLMedModalElement extends Components.MedModal, HTMLStencilElement {
+    }
+    var HTMLMedModalElement: {
+        prototype: HTMLMedModalElement;
+        new (): HTMLMedModalElement;
+    };
     interface HTMLElementTagNameMap {
         "med-button": HTMLMedButtonElement;
+        "med-modal": HTMLMedModalElement;
     }
 }
 declare namespace LocalJSX {
@@ -39,8 +48,11 @@ declare namespace LocalJSX {
         "target"?: string | undefined;
         "type"?: 'submit' | 'reset' | 'button';
     }
+    interface MedModal {
+    }
     interface IntrinsicElements {
         "med-button": MedButton;
+        "med-modal": MedModal;
     }
 }
 export { LocalJSX as JSX };
@@ -48,6 +60,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "med-button": LocalJSX.MedButton & JSXBase.HTMLAttributes<HTMLMedButtonElement>;
+            "med-modal": LocalJSX.MedModal & JSXBase.HTMLAttributes<HTMLMedModalElement>;
         }
     }
 }
