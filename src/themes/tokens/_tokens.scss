@@ -207,9 +207,9 @@
   --med-font-weight-heavy: #{$med-font-weight-heavy};
 
   // line height
-  --med-line-height-compressed: #{$};
+  --med-line-height-compressed: #{$med-line-height-compressed};
   --med-line-height-default: #{$med-line-height-default};
-  --med-line-height-double: #{$};
+  --med-line-height-double: #{$med-line-height-compressed};
 
   // spacing inset
   --med-spacing-inset-nano: #{$med-spacing-inset-nano};
