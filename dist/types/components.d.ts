@@ -394,7 +394,7 @@ export namespace Components {
          */
         "name": string;
         /**
-          * The value of the checkbox does not mean if it's checked or not, use the `checked` property for that.  The value of a checkbox is analogous to the value of an `<input type="checkbox">`, it's only used when the checkbox participates in a native `<form>`.
+          * The value of the toggle does not mean if it's checked or not, use the `checked` property for that.  The value of a toggle is analogous to the value of a `<input type="checkbox">`, it's only used when the toggle participates in a native `<form>`.
          */
         "value": string;
     }
@@ -403,10 +403,6 @@ export namespace Components {
           * The color to use from your application's color palette. Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`. For more information on colors, see [theming](/docs/theming/basics).
          */
         "color"?: Color;
-        /**
-          * If `true`, the user cannot interact with the chip.
-         */
-        "disabled": boolean;
         /**
           * The mode determines which platform styles to use.
          */
@@ -834,7 +830,7 @@ export namespace Components {
          */
         "accept"?: string;
         /**
-          * Indicates whether and how the text value should be automatically capitalized as it is entered/edited by the user. Available options: `"off"`, `"none"`, `"on"`, `"sentences"`, `"words"`, `"characters"`.
+          * Indicates whether and how the text value should be automatically capitalized as it is entered/edited by the user.
          */
         "autocapitalize": string;
         /**
@@ -862,7 +858,7 @@ export namespace Components {
          */
         "color"?: Color;
         /**
-          * Set the amount of time, in milliseconds, to wait to trigger the `ionChange` event after each keystroke. This also impacts form bindings such as `ngModel` or `v-model`.
+          * Set the amount of time, in milliseconds, to wait to trigger the `ionChange` event after each keystroke.
          */
         "debounce": number;
         /**
@@ -873,10 +869,6 @@ export namespace Components {
           * A hint to the browser for which enter key to display. Possible values: `"enter"`, `"done"`, `"go"`, `"next"`, `"previous"`, `"search"`, and `"send"`.
          */
         "enterkeyhint"?: 'enter' | 'done' | 'go' | 'next' | 'previous' | 'search' | 'send';
-        /**
-          * This is required for a WebKit bug which requires us to blur and focus an input to properly focus the input in an item with delegatesFocus. It will no longer be needed with iOS 14.
-         */
-        "fireFocusEvents": boolean;
         /**
           * Returns the native `<input>` element used under the hood.
          */
@@ -930,11 +922,7 @@ export namespace Components {
          */
         "required": boolean;
         /**
-          * Sets blur on the native `input` in `ion-input`. Use this method instead of the global `input.blur()`.
-         */
-        "setBlur": () => Promise<void>;
-        /**
-          * Sets focus on the native `input` in `ion-input`. Use this method instead of the global `input.focus()`.
+          * Sets focus on the specified `ion-input`. Use this method instead of the global `input.focus()`.
          */
         "setFocus": () => Promise<void>;
         /**
@@ -1707,8 +1695,6 @@ export namespace Components {
           * The name of the control, which is submitted with the form data.
          */
         "name": string;
-        "setButtonTabindex": (value: number) => Promise<void>;
-        "setFocus": (ev: any) => Promise<void>;
         /**
           * the value of the radio.
          */
@@ -1734,7 +1720,7 @@ export namespace Components {
          */
         "color"?: Color;
         /**
-          * How long, in milliseconds, to wait to trigger the `ionChange` event after each change in the range value. This also impacts form bindings such as `ngModel` or `v-model`.
+          * How long, in milliseconds, to wait to trigger the `ionChange` event after each change in the range value.
          */
         "debounce": number;
         /**
@@ -1995,7 +1981,7 @@ export namespace Components {
          */
         "color"?: Color;
         /**
-          * Set the amount of time, in milliseconds, to wait to trigger the `ionChange` event after each keystroke. This also impacts form bindings such as `ngModel` or `v-model`.
+          * Set the amount of time, in milliseconds, to wait to trigger the `ionChange` event after each keystroke.
          */
         "debounce": number;
         /**
@@ -2035,10 +2021,6 @@ export namespace Components {
          */
         "showCancelButton": 'never' | 'focus' | 'always';
         /**
-          * Sets the behavior for the clear button. Defaults to `"focus"`. Setting to `"focus"` shows the clear button on focus if the input is not empty. Setting to `"never"` hides the clear button. Setting to `"always"` shows the clear button regardless of focus state, but only if the input is not empty.
-         */
-        "showClearButton": 'never' | 'focus' | 'always';
-        /**
           * If `true`, enable spellcheck on the input.
          */
         "spellcheck": boolean;
@@ -2068,10 +2050,6 @@ export namespace Components {
           * If `true`, the segment buttons will overflow and the user can swipe to see them. In addition, this will disable the gesture to drag the indicator between the buttons in order to swipe to see hidden buttons.
          */
         "scrollable": boolean;
-        /**
-          * If `true`, users will be able to swipe between segment buttons to activate them.
-         */
-        "swipeGesture": boolean;
         /**
           * the value of the segment.
          */
@@ -2442,7 +2420,7 @@ export namespace Components {
          */
         "cols"?: number;
         /**
-          * Set the amount of time, in milliseconds, to wait to trigger the `ionChange` event after each keystroke. This also impacts form bindings such as `ngModel` or `v-model`.
+          * Set the amount of time, in milliseconds, to wait to trigger the `ionChange` event after each keystroke.
          */
         "debounce": number;
         /**
@@ -2453,10 +2431,6 @@ export namespace Components {
           * A hint to the browser for which enter key to display. Possible values: `"enter"`, `"done"`, `"go"`, `"next"`, `"previous"`, `"search"`, and `"send"`.
          */
         "enterkeyhint"?: 'enter' | 'done' | 'go' | 'next' | 'previous' | 'search' | 'send';
-        /**
-          * This is required for a WebKit bug which requires us to blur and focus an input to properly focus the input in an item with delegatesFocus. It will no longer be needed with iOS 14.
-         */
-        "fireFocusEvents": boolean;
         /**
           * Returns the native `<textarea>` element used under the hood.
          */
@@ -2498,11 +2472,7 @@ export namespace Components {
          */
         "rows"?: number;
         /**
-          * Sets blur on the native `textarea` in `ion-textarea`. Use this method instead of the global `textarea.blur()`.
-         */
-        "setBlur": () => Promise<void>;
-        /**
-          * Sets focus on the native `textarea` in `ion-textarea`. Use this method instead of the global `textarea.focus()`.
+          * Sets focus on the specified `ion-textarea`. Use this method instead of the global `input.focus()`.
          */
         "setFocus": () => Promise<void>;
         /**
@@ -2705,14 +2675,6 @@ export namespace Components {
           * NOTE: only JSX API for stencil.  Provide a render function for the items to be rendered. Returns a JSX virtual-dom.
          */
         "renderItem"?: (item: any, index: number) => any;
-    }
-    interface MedButton {
-        "disabled": boolean;
-        "download": string | undefined;
-        "href": string | undefined;
-        "rel": string | undefined;
-        "target": string | undefined;
-        "type": 'submit' | 'reset' | 'button';
     }
 }
 declare global {
@@ -3238,12 +3200,6 @@ declare global {
         prototype: HTMLIonVirtualScrollElement;
         new (): HTMLIonVirtualScrollElement;
     };
-    interface HTMLMedButtonElement extends Components.MedButton, HTMLStencilElement {
-    }
-    var HTMLMedButtonElement: {
-        prototype: HTMLMedButtonElement;
-        new (): HTMLMedButtonElement;
-    };
     interface HTMLElementTagNameMap {
         "ion-action-sheet": HTMLIonActionSheetElement;
         "ion-alert": HTMLIonAlertElement;
@@ -3332,7 +3288,6 @@ declare global {
         "ion-toggle": HTMLIonToggleElement;
         "ion-toolbar": HTMLIonToolbarElement;
         "ion-virtual-scroll": HTMLIonVirtualScrollElement;
-        "med-button": HTMLMedButtonElement;
     }
 }
 declare namespace LocalJSX {
@@ -3726,7 +3681,7 @@ declare namespace LocalJSX {
          */
         "name"?: string;
         /**
-          * Emitted when the checkbox loses focus.
+          * Emitted when the toggle loses focus.
          */
         "onIonBlur"?: (event: CustomEvent<void>) => void;
         /**
@@ -3734,11 +3689,11 @@ declare namespace LocalJSX {
          */
         "onIonChange"?: (event: CustomEvent<CheckboxChangeEventDetail>) => void;
         /**
-          * Emitted when the checkbox has focus.
+          * Emitted when the toggle has focus.
          */
         "onIonFocus"?: (event: CustomEvent<void>) => void;
         /**
-          * The value of the checkbox does not mean if it's checked or not, use the `checked` property for that.  The value of a checkbox is analogous to the value of an `<input type="checkbox">`, it's only used when the checkbox participates in a native `<form>`.
+          * The value of the toggle does not mean if it's checked or not, use the `checked` property for that.  The value of a toggle is analogous to the value of a `<input type="checkbox">`, it's only used when the toggle participates in a native `<form>`.
          */
         "value"?: string;
     }
@@ -3747,10 +3702,6 @@ declare namespace LocalJSX {
           * The color to use from your application's color palette. Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`. For more information on colors, see [theming](/docs/theming/basics).
          */
         "color"?: Color;
-        /**
-          * If `true`, the user cannot interact with the chip.
-         */
-        "disabled"?: boolean;
         /**
           * The mode determines which platform styles to use.
          */
@@ -4190,7 +4141,7 @@ declare namespace LocalJSX {
          */
         "accept"?: string;
         /**
-          * Indicates whether and how the text value should be automatically capitalized as it is entered/edited by the user. Available options: `"off"`, `"none"`, `"on"`, `"sentences"`, `"words"`, `"characters"`.
+          * Indicates whether and how the text value should be automatically capitalized as it is entered/edited by the user.
          */
         "autocapitalize"?: string;
         /**
@@ -4218,7 +4169,7 @@ declare namespace LocalJSX {
          */
         "color"?: Color;
         /**
-          * Set the amount of time, in milliseconds, to wait to trigger the `ionChange` event after each keystroke. This also impacts form bindings such as `ngModel` or `v-model`.
+          * Set the amount of time, in milliseconds, to wait to trigger the `ionChange` event after each keystroke.
          */
         "debounce"?: number;
         /**
@@ -4974,7 +4925,7 @@ declare namespace LocalJSX {
          */
         "color"?: Color;
         /**
-          * How long, in milliseconds, to wait to trigger the `ionChange` event after each change in the range value. This also impacts form bindings such as `ngModel` or `v-model`.
+          * How long, in milliseconds, to wait to trigger the `ionChange` event after each change in the range value.
          */
         "debounce"?: number;
         /**
@@ -5238,7 +5189,7 @@ declare namespace LocalJSX {
          */
         "color"?: Color;
         /**
-          * Set the amount of time, in milliseconds, to wait to trigger the `ionChange` event after each keystroke. This also impacts form bindings such as `ngModel` or `v-model`.
+          * Set the amount of time, in milliseconds, to wait to trigger the `ionChange` event after each keystroke.
          */
         "debounce"?: number;
         /**
@@ -5294,10 +5245,6 @@ declare namespace LocalJSX {
          */
         "showCancelButton"?: 'never' | 'focus' | 'always';
         /**
-          * Sets the behavior for the clear button. Defaults to `"focus"`. Setting to `"focus"` shows the clear button on focus if the input is not empty. Setting to `"never"` hides the clear button. Setting to `"always"` shows the clear button regardless of focus state, but only if the input is not empty.
-         */
-        "showClearButton"?: 'never' | 'focus' | 'always';
-        /**
           * If `true`, enable spellcheck on the input.
          */
         "spellcheck"?: boolean;
@@ -5331,10 +5278,6 @@ declare namespace LocalJSX {
           * If `true`, the segment buttons will overflow and the user can swipe to see them. In addition, this will disable the gesture to drag the indicator between the buttons in order to swipe to see hidden buttons.
          */
         "scrollable"?: boolean;
-        /**
-          * If `true`, users will be able to swipe between segment buttons to activate them.
-         */
-        "swipeGesture"?: boolean;
         /**
           * the value of the segment.
          */
@@ -5694,7 +5637,7 @@ declare namespace LocalJSX {
          */
         "cols"?: number;
         /**
-          * Set the amount of time, in milliseconds, to wait to trigger the `ionChange` event after each keystroke. This also impacts form bindings such as `ngModel` or `v-model`.
+          * Set the amount of time, in milliseconds, to wait to trigger the `ionChange` event after each keystroke.
          */
         "debounce"?: number;
         /**
@@ -5954,16 +5897,6 @@ declare namespace LocalJSX {
          */
         "renderItem"?: (item: any, index: number) => any;
     }
-    interface MedButton {
-        "disabled"?: boolean;
-        "download"?: string | undefined;
-        "href"?: string | undefined;
-        "onMedBlur"?: (event: CustomEvent<void>) => void;
-        "onMedFocus"?: (event: CustomEvent<void>) => void;
-        "rel"?: string | undefined;
-        "target"?: string | undefined;
-        "type"?: 'submit' | 'reset' | 'button';
-    }
     interface IntrinsicElements {
         "ion-action-sheet": IonActionSheet;
         "ion-alert": IonAlert;
@@ -6052,7 +5985,6 @@ declare namespace LocalJSX {
         "ion-toggle": IonToggle;
         "ion-toolbar": IonToolbar;
         "ion-virtual-scroll": IonVirtualScroll;
-        "med-button": MedButton;
     }
 }
 export { LocalJSX as JSX };
@@ -6146,7 +6078,6 @@ declare module "@stencil/core" {
             "ion-toggle": LocalJSX.IonToggle & JSXBase.HTMLAttributes<HTMLIonToggleElement>;
             "ion-toolbar": LocalJSX.IonToolbar & JSXBase.HTMLAttributes<HTMLIonToolbarElement>;
             "ion-virtual-scroll": LocalJSX.IonVirtualScroll & JSXBase.HTMLAttributes<HTMLIonVirtualScrollElement>;
-            "med-button": LocalJSX.MedButton & JSXBase.HTMLAttributes<HTMLMedButtonElement>;
         }
     }
 }

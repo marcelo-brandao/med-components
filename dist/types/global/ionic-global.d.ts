@@ -1,4 +1,4 @@
-import { IonicConfig, Mode } from '../interface';
+import { Mode } from '../interface';
 export declare const getIonMode: (ref?: any) => Mode;
-export declare const initialize: (userConfig?: IonicConfig) => void;
-export default initialize;
+declare const _default: () => void;
+export default _default;

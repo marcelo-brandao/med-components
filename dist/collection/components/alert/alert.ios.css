@@ -24,7 +24,7 @@
   top: 0;
   bottom: 0;
   display: flex;
-  position: absolute;
+  position: fixed;
   align-items: center;
   justify-content: center;
   outline: none;

@@ -39,7 +39,6 @@
     "./components/list/list.js",
     "./components/list-header/list-header.js",
     "./components/loading/loading.js",
-    "./components/med-button/med-button.js",
     "./components/menu/menu.js",
     "./components/menu-button/menu-button.js",
     "./components/menu-toggle/menu-toggle.js",
@@ -91,8 +90,8 @@
   ],
   "compiler": {
     "name": "@stencil/core",
-    "version": "2.4.0",
-    "typescriptVersion": "4.1.3"
+    "version": "1.17.1",
+    "typescriptVersion": "3.9.7"
   },
   "collections": [
     {
