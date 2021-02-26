@@ -105,5 +105,7 @@ export declare class Button implements ComponentInterface, AnchorInterface, Butt
   private handleClick;
   private onFocus;
   private onBlur;
+  private handleMouseEnter;
+  private handleMouseLeave;
   render(): any;
 }
