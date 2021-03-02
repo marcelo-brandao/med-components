@@ -239,55 +239,81 @@
   --med-shadow-level-10: 0 24px 38px rgba(0, 0, 0, 0.14), 0 9px 46px rgba(0, 0, 0, 0.12), 0 11px 15px rgba(0, 0, 0, 0.2);
 }
 
-/**
-  * @prop --background: Especifica o background do med-button.
-  * @prop --border: Especifica o border do med-button.
-  * @prop --border-radius: Especifica o border-radius do med-button.
-  * @prop --box-shadow: Especifica o box-shadow do med-button.
-  * @prop --padding: Especifica o padding do med-button.
-  * @prop --transition: Especifica o transition do med-button.
-  * @prop --color: Especifica a cor do med-button.
-  * @prop --font-size: Especifica o tamanho da fonte do med-button.
-  */
 :host {
+  --med-padding: 16px 32px;
+  --med-background: linear-gradient(to right, #3aa8b9, #137585);
+  --med-background-hover: #3aa8b9;
+  --med-background-disabled: #c2c2c2;
+  --med-background-activated: #137585;
+  --med-background-focused: #3aa8b9;
+  --med-border-radius: 31.25em;
+  --med-border-width: 0;
+  --med-border-width-focused: 2px;
+  --med-border-color-focused: #b0ecf5;
+  --med-font-size: 16px;
+  --med-font-weight: 600;
+  --med-line-height: 100%;
+  --med-color: #fafafa;
+  --med-text-transform: uppercase;
+  --med-transition: opacity 100ms ease-out;
+  --med-overflow: hidden;
+  font-family: inherit;
   display: inline-block;
   width: auto;
-  color: var(--color, #fff);
-  font-family: var(--med-font-family-brand, inherit);
   text-align: center;
   text-decoration: none;
   text-overflow: ellipsis;
   white-space: nowrap;
   user-select: none;
-  vertical-align: middle;
+  vertical-align: top;
   vertical-align: -webkit-baseline-middle;
   pointer-events: auto;
   font-kerning: none;
+  height: 200px;
 }
-
-:host .native {
-  border-radius: var(--border-radius);
-  margin: 0;
-  padding: var(--padding);
+:host .button-native {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-family: inherit;
+  font-size: inherit;
+  font-style: inherit;
+  font-weight: inherit;
+  letter-spacing: inherit;
+  text-decoration: inherit;
+  text-indent: inherit;
+  text-overflow: inherit;
+  text-transform: inherit;
+  text-align: inherit;
+  white-space: inherit;
+  color: inherit;
+  overflow: hidden;
   display: block;
   position: relative;
   width: 100%;
   height: 100%;
-  transition: var(--transition);
-  border: var(--border);
   outline: none;
-  background: var(--background);
   line-height: 1;
-  box-shadow: var(--box-shadow);
   contain: layout style;
   cursor: pointer;
-  opacity: var(--opacity);
-  overflow: var(--overflow);
   z-index: 0;
   box-sizing: border-box;
   appearance: none;
+  margin: 0;
 }
-:host .inner {
+:host .button-native::-moz-focus-inner {
+  border: 0;
+}
+:host .button-native::before {
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  position: absolute;
+  content: "";
+  opacity: 0;
+  opacity: 1;
+}
+:host .button-inner {
   display: flex;
   position: relative;
   flex-flow: row nowrap;
@@ -299,37 +325,110 @@
   z-index: 1;
 }
 
-/**
-  * default state
-  */
-:host {
-  --background: linear-gradient(to right, #3aa8b9, #137585);
-  --border: 2px solid 0;
-  --border-radius: 31.25em;
-  --padding: 16px 32px;
-  --transition: color 150ms ease-in-out, background-color 150ms ease-in-out, border 150ms ease-in-out, border-radius 150ms ease-in-out, box-shadow 150ms ease-in-out;
-  --color: #fff;
-  font-size: 14px;
-  font-weight: 700;
-  height: 44px;
-  text-transform: uppercase;
+:host([block]) {
+  display: block;
+}
+:host([block]) .button-native {
+  display: block;
+  width: 100%;
+  clear: both;
+  contain: content;
+  margin-left: 0;
+  margin-right: 0;
+}
+:host([block]) .button-native::before {
+  clear: both;
+}
+
+:host([full]) {
+  display: block;
+}
+:host([full]) .button-native {
+  display: block;
+  width: 100%;
+  contain: content;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+:host([disabled]) {
+  cursor: default;
+  pointer-events: none;
+}
+:host([disabled]) .button-native::before {
+  opacity: 1;
+}
+
+:host(.ion-activated) .button-native::before {
+  opacity: 1;
+}
+
+:host(.ion-focused) .button-native {
+  border-style: solid;
+}
+:host(.ion-focused) .button-native::before {
+  opacity: 1;
 }
 
 @media (any-hover: hover) {
-  :host(:hover) {
-    --background: #075344;
+  :host(:hover) .button-native::before {
+    opacity: 0;
   }
 }
-:host(.med-focused) {
-  --background: #552607;
+:host {
+  font-size: var(--med-font-size);
+  font-weight: var(--med-font-weight);
+  text-transform: var(--med-text-transform);
+  color: var(--med-color);
+}
+:host .button-native {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-family: inherit;
+  font-size: inherit;
+  font-style: inherit;
+  font-weight: inherit;
+  letter-spacing: inherit;
+  text-decoration: inherit;
+  text-indent: inherit;
+  text-overflow: inherit;
+  text-transform: inherit;
+  text-align: inherit;
+  white-space: inherit;
+  color: inherit;
+  background: var(--med-background-hover);
+  padding: var(--med-padding);
+  border-width: var(--med-border-width);
+  color: var(--med-color);
+  border-radius: var(--med-border-radius);
+}
+:host .button-native::before {
+  background: var(--med-background);
+  transition: var(--med-transition);
 }
 
-:host(.med-activated) {
-  --box-shadow: 0 0 5px rgba(0, 0, 0, 0.33);
+:host([disabled]) .button-native::before {
+  background: var(--med-background-disabled);
 }
 
-:host(.med-disabled) {
-  cursor: default;
-  opacity: 0.5;
-  pointer-events: none;
+:host(.ion-activated) .button-native::before {
+  background: var(--med-background-activated);
+}
+
+:host(.ion-focused) .button-native {
+  border-width: var(--med-border-width-focused);
+  border-color: var(--med-border-color-focused);
+}
+:host(.ion-focused) .button-native::before {
+  background: var(--med-background-focused);
+  transition: var(--med-transition);
+}
+
+@media (any-hover: hover) {
+  :host(:hover) .button-native::before {
+    transition: var(--med-transition);
+  }
+}
+ion-ripple-effect {
+  color: var(--ripple-color);
 }

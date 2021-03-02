@@ -4493,32 +4493,125 @@
       "name": "med-button",
       "description": {
         "kind": "markdown",
-        "value": "import { Meta } from '@storybook/addon-docs/blocks';\n\n<Meta title=\"Components/button\" />"
+        "value": "Buttons provide a clickable element, which can be used in forms, or anywhere that needs simple, standard button functionality. They may display text, icons, or both. Buttons can be styled with several attributes to look a specific way."
       },
       "attributes": [
         {
+          "name": "button-type",
+          "description": "The type of button."
+        },
+        {
+          "name": "color",
+          "description": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics)."
+        },
+        {
           "name": "disabled",
-          "description": ""
+          "description": "If `true`, the user cannot interact with the button."
         },
         {
           "name": "download",
-          "description": ""
+          "description": "This attribute instructs browsers to download a URL instead of navigating to\nit, so the user will be prompted to save it as a local file. If the attribute\nhas a value, it is used as the pre-filled file name in the Save prompt\n(the user can still change the file name if they want)."
+        },
+        {
+          "name": "expand",
+          "description": "Set to `\"block\"` for a full-width button or to `\"full\"` for a full-width button\nwithout left and right borders.",
+          "values": [
+            {
+              "name": "block"
+            },
+            {
+              "name": "full"
+            }
+          ]
+        },
+        {
+          "name": "fill",
+          "description": "Set to `\"clear\"` for a transparent button, to `\"outline\"` for a transparent\nbutton with a border, or to `\"solid\"`. The default style is `\"solid\"` except inside of\na toolbar, where the default is `\"clear\"`.",
+          "values": [
+            {
+              "name": "clear"
+            },
+            {
+              "name": "default"
+            },
+            {
+              "name": "outline"
+            },
+            {
+              "name": "solid"
+            }
+          ]
         },
         {
           "name": "href",
-          "description": ""
+          "description": "Contains a URL or a URL fragment that the hyperlink points to.\nIf this property is set, an anchor tag will be rendered."
+        },
+        {
+          "name": "mode",
+          "description": "The mode determines which platform styles to use.",
+          "values": [
+            {
+              "name": "ios"
+            },
+            {
+              "name": "md"
+            }
+          ]
         },
         {
           "name": "rel",
-          "description": ""
+          "description": "Specifies the relationship of the target object to the link object.\nThe value is a space-separated list of [link types](https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types)."
+        },
+        {
+          "name": "router-direction",
+          "description": "When using a router, it specifies the transition direction when navigating to\nanother page using `href`.",
+          "values": [
+            {
+              "name": "back"
+            },
+            {
+              "name": "forward"
+            },
+            {
+              "name": "root"
+            }
+          ]
+        },
+        {
+          "name": "shape",
+          "description": "The button shape.",
+          "values": [
+            {
+              "name": "round"
+            }
+          ]
+        },
+        {
+          "name": "size",
+          "description": "The button size.",
+          "values": [
+            {
+              "name": "default"
+            },
+            {
+              "name": "large"
+            },
+            {
+              "name": "small"
+            }
+          ]
+        },
+        {
+          "name": "strong",
+          "description": "If `true`, activates a button with a heavier font weight."
         },
         {
           "name": "target",
-          "description": ""
+          "description": "Specifies where to display the linked URL.\nOnly applies when an `href` is provided.\nSpecial keywords: `\"_blank\"`, `\"_self\"`, `\"_parent\"`, `\"_top\"`."
         },
         {
           "name": "type",
-          "description": "",
+          "description": "The type of the button.",
           "values": [
             {
               "name": "button"
@@ -4535,7 +4628,7 @@
       "references": [
         {
           "name": "Source code",
-          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/med-button/med-button.tsx"
+          "url": "./https:/github.com/ionic-team/ionic/tree/master/core/src/components/med-button/button.tsx"
         }
       ]
     }

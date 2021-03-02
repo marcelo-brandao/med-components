@@ -239,7 +239,7 @@
   --med-shadow-level-10: 0 24px 38px rgba(0, 0, 0, 0.14), 0 9px 46px rgba(0, 0, 0, 0.12), 0 11px 15px rgba(0, 0, 0, 0.2);
 }
 
-:host([primary]) {
+:host {
   --med-padding: 16px 32px;
   --med-background: linear-gradient(to right, #3aa8b9, #137585);
   --med-background-hover: #3aa8b9;
@@ -270,7 +270,7 @@
   pointer-events: auto;
   font-kerning: none;
 }
-:host([primary]) .button-native {
+:host .button-native {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   font-family: inherit;
@@ -299,10 +299,10 @@
   appearance: none;
   margin: 0;
 }
-:host([primary]) .button-native::-moz-focus-inner {
+:host .button-native::-moz-focus-inner {
   border: 0;
 }
-:host([primary]) .button-native::before {
+:host .button-native::before {
   left: 0;
   right: 0;
   top: 0;
@@ -312,7 +312,7 @@
   opacity: 0;
   opacity: 1;
 }
-:host([primary]) .button-inner {
+:host .button-inner {
   display: flex;
   position: relative;
   flex-flow: row nowrap;
@@ -350,22 +350,22 @@
   margin-right: 0;
 }
 
-:host([primary][disabled]) {
+:host([disabled]) {
   cursor: default;
   pointer-events: none;
 }
-:host([primary][disabled]) .button-native::before {
+:host([disabled]) .button-native::before {
   opacity: 1;
 }
 
-:host([primary].ion-activated) .button-native::before {
+:host(.ion-activated) .button-native::before {
   opacity: 1;
 }
 
-:host([primary].ion-focused) .button-native {
+:host(.ion-focused) .button-native {
   border-style: solid;
 }
-:host([primary].ion-focused) .button-native::before {
+:host(.ion-focused) .button-native::before {
   opacity: 1;
 }
 
