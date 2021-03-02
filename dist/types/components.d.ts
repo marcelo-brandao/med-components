@@ -2706,7 +2706,15 @@ export namespace Components {
          */
         "renderItem"?: (item: any, index: number) => any;
     }
+    interface MedBalbino {
+    }
     interface MedButton {
+        "disabled": boolean;
+        "download": string | undefined;
+        "href": string | undefined;
+        "rel": string | undefined;
+        "target": string | undefined;
+        "type": 'submit' | 'reset' | 'button';
     }
 }
 declare global {
@@ -3232,6 +3240,12 @@ declare global {
         prototype: HTMLIonVirtualScrollElement;
         new (): HTMLIonVirtualScrollElement;
     };
+    interface HTMLMedBalbinoElement extends Components.MedBalbino, HTMLStencilElement {
+    }
+    var HTMLMedBalbinoElement: {
+        prototype: HTMLMedBalbinoElement;
+        new (): HTMLMedBalbinoElement;
+    };
     interface HTMLMedButtonElement extends Components.MedButton, HTMLStencilElement {
     }
     var HTMLMedButtonElement: {
@@ -3326,6 +3340,7 @@ declare global {
         "ion-toggle": HTMLIonToggleElement;
         "ion-toolbar": HTMLIonToolbarElement;
         "ion-virtual-scroll": HTMLIonVirtualScrollElement;
+        "med-balbino": HTMLMedBalbinoElement;
         "med-button": HTMLMedButtonElement;
     }
 }
@@ -5948,7 +5963,17 @@ declare namespace LocalJSX {
          */
         "renderItem"?: (item: any, index: number) => any;
     }
+    interface MedBalbino {
+    }
     interface MedButton {
+        "disabled"?: boolean;
+        "download"?: string | undefined;
+        "href"?: string | undefined;
+        "onMedBlur"?: (event: CustomEvent<void>) => void;
+        "onMedFocus"?: (event: CustomEvent<void>) => void;
+        "rel"?: string | undefined;
+        "target"?: string | undefined;
+        "type"?: 'submit' | 'reset' | 'button';
     }
     interface IntrinsicElements {
         "ion-action-sheet": IonActionSheet;
@@ -6038,6 +6063,7 @@ declare namespace LocalJSX {
         "ion-toggle": IonToggle;
         "ion-toolbar": IonToolbar;
         "ion-virtual-scroll": IonVirtualScroll;
+        "med-balbino": MedBalbino;
         "med-button": MedButton;
     }
 }
@@ -6132,6 +6158,7 @@ declare module "@stencil/core" {
             "ion-toggle": LocalJSX.IonToggle & JSXBase.HTMLAttributes<HTMLIonToggleElement>;
             "ion-toolbar": LocalJSX.IonToolbar & JSXBase.HTMLAttributes<HTMLIonToolbarElement>;
             "ion-virtual-scroll": LocalJSX.IonVirtualScroll & JSXBase.HTMLAttributes<HTMLIonVirtualScrollElement>;
+            "med-balbino": LocalJSX.MedBalbino & JSXBase.HTMLAttributes<HTMLMedBalbinoElement>;
             "med-button": LocalJSX.MedButton & JSXBase.HTMLAttributes<HTMLMedButtonElement>;
         }
     }

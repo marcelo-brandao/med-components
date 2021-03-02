@@ -1,0 +1,1 @@
+import{r as s,h as l,H as o}from"./p-aea38759.js";const r=class{constructor(l){s(this,l)}render(){return l(o,null,l("h1",null,"BALBINO"),l("slot",null))}};r.style=":host{display:block}";export{r as med_balbino}

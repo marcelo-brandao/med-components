@@ -1,0 +1,1 @@
+System.register(["./p-059709b3.system.js"],(function(t){"use strict";var n,e,r;return{setters:[function(t){n=t.r;e=t.h;r=t.H}],execute:function(){var s=":host{display:block}";var u=t("med_balbino",function(){function t(t){n(this,t)}t.prototype.render=function(){return e(r,null,e("h1",null,"BALBINO"),e("slot",null))};return t}());u.style=s}}}));
