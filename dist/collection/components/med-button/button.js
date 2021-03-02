@@ -1,5 +1,5 @@
 import { Component, Host, h } from '@stencil/core';
-export class Button {
+export class MedButton {
   render() {
     return (h(Host, null,
       h("h1", null, "MED-BUTTON")));

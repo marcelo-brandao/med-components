@@ -4,7 +4,7 @@ const iosMedButtonCss = ":host h1{font-size:25px;color:#fff}";
 
 const mdMedButtonCss = ":host h1{font-size:25px;color:#fff}";
 
-const Button = class {
+const MedButton = class {
   constructor(hostRef) {
     registerInstance(this, hostRef);
   }
@@ -12,9 +12,9 @@ const Button = class {
     return (h(Host, null, h("h1", null, "MED-BUTTON")));
   }
 };
-Button.style = {
+MedButton.style = {
   ios: iosMedButtonCss,
   md: mdMedButtonCss
 };
 
-export { Button as med_button };
+export { MedButton as med_button };
