@@ -215,6 +215,11 @@
     },
     {
       "components": [
+        "med-button"
+      ]
+    },
+    {
+      "components": [
         "ion-button",
         "ion-icon"
       ]

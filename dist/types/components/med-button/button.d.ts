@@ -101,7 +101,6 @@ export declare class Button implements ComponentInterface, AnchorInterface, Butt
   ionBlur: EventEmitter<void>;
   componentWillLoad(): void;
   private get hasIconOnly();
-  private get rippleType();
   private handleClick;
   private onFocus;
   private onBlur;

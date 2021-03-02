@@ -75,15 +75,6 @@ export class Button {
   get hasIconOnly() {
     return !!this.el.querySelector('[slot="icon-only"]');
   }
-  get rippleType() {
-    const hasClearFill = this.fill === undefined || this.fill === 'clear';
-    // If the button is in a toolbar, has a clear fill (which is the default)
-    // and only has an icon we use the unbounded "circular" ripple effect
-    if (hasClearFill && this.hasIconOnly && this.inToolbar) {
-      return 'unbounded';
-    }
-    return 'bounded';
-  }
   render() {
     const mode = getIonMode(this);
     const { buttonType, type, disabled, rel, target, size, href, color, expand, hasIconOnly, shape, strong, inheritedAttributes } = this;
@@ -121,8 +112,7 @@ export class Button {
           h("slot", { name: "icon-only" }),
           h("slot", { name: "start" }),
           h("slot", null),
-          h("slot", { name: "end" })),
-        mode === 'md' && h("ion-ripple-effect", { type: this.rippleType }))));
+          h("slot", { name: "end" })))));
   }
   static get is() { return "med-button"; }
   static get encapsulation() { return "shadow"; }

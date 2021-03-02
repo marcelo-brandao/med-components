@@ -73,15 +73,6 @@ const Button = class {
   get hasIconOnly() {
     return !!this.el.querySelector('[slot="icon-only"]');
   }
-  get rippleType() {
-    const hasClearFill = this.fill === undefined || this.fill === 'clear';
-    // If the button is in a toolbar, has a clear fill (which is the default)
-    // and only has an icon we use the unbounded "circular" ripple effect
-    if (hasClearFill && this.hasIconOnly && this.inToolbar) {
-      return 'unbounded';
-    }
-    return 'bounded';
-  }
   render() {
     const mode = getIonMode(this);
     const { buttonType, type, disabled, rel, target, size, href, color, expand, hasIconOnly, shape, strong, inheritedAttributes } = this;
@@ -113,7 +104,7 @@ const Button = class {
         'button-disabled': disabled,
         'ion-activatable': true,
         'ion-focusable': true,
-      }) }, h(TagType, Object.assign({}, attrs, { class: "button-native", part: "native", disabled: disabled, onFocus: this.onFocus, onBlur: this.onBlur }, inheritedAttributes), h("span", { class: "button-inner" }, h("slot", { name: "icon-only" }), h("slot", { name: "start" }), h("slot", null), h("slot", { name: "end" })), mode === 'md' && h("ion-ripple-effect", { type: this.rippleType }))));
+      }) }, h(TagType, Object.assign({}, attrs, { class: "button-native", part: "native", disabled: disabled, onFocus: this.onFocus, onBlur: this.onBlur }, inheritedAttributes), h("span", { class: "button-inner" }, h("slot", { name: "icon-only" }), h("slot", { name: "start" }), h("slot", null), h("slot", { name: "end" })))));
   }
   get el() { return getElement(this); }
 };

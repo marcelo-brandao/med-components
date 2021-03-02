@@ -1,5 +1,5 @@
 {
-  "timestamp": "2021-03-02T12:54:55",
+  "timestamp": "2021-03-02T13:36:28",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.4.0",
@@ -12521,8 +12521,7 @@
         "ion-menu-button",
         "ion-segment-button",
         "ion-tab-button",
-        "ion-toast",
-        "med-button"
+        "ion-toast"
       ],
       "dependencies": [],
       "dependencyGraph": {
@@ -12563,9 +12562,6 @@
           "ion-ripple-effect"
         ],
         "ion-toast": [
-          "ion-ripple-effect"
-        ],
-        "med-button": [
           "ion-ripple-effect"
         ]
       }
@@ -18785,14 +18781,8 @@
         }
       ],
       "dependents": [],
-      "dependencies": [
-        "ion-ripple-effect"
-      ],
-      "dependencyGraph": {
-        "med-button": [
-          "ion-ripple-effect"
-        ]
-      }
+      "dependencies": [],
+      "dependencyGraph": {}
     }
   ]
 }
