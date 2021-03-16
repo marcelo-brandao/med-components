@@ -102,7 +102,6 @@
 }
 
 :host-context(.item-has-focus).label-floating,
-:host-context(.item-has-placeholder).label-floating,
 :host-context(.item-has-value).label-floating {
   transform: translateY(50%) scale(0.75);
 }

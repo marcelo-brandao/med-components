@@ -33,15 +33,14 @@ export class ProgressBar {
     const { color, type, reversed, value, buffer } = this;
     const paused = config.getBoolean('_testing');
     const mode = getIonMode(this);
-    const isReversed = document.dir === 'rtl' ? !reversed : reversed;
     return (h(Host, { role: "progressbar", "aria-valuenow": type === 'determinate' ? value : null, "aria-valuemin": "0", "aria-valuemax": "1", class: createColorClasses(color, {
         [mode]: true,
         [`progress-bar-${type}`]: true,
         'progress-paused': paused,
-        'progress-bar-reversed': isReversed
+        'progress-bar-reversed': document.dir === 'rtl' ? !reversed : reversed
       }) }, type === 'indeterminate'
       ? renderIndeterminate()
-      : renderProgress(value, buffer, isReversed)));
+      : renderProgress(value, buffer)));
   }
   static get is() { return "ion-progress-bar"; }
   static get encapsulation() { return "shadow"; }
@@ -66,7 +65,7 @@ export class ProgressBar {
       "optional": false,
       "docs": {
         "tags": [],
-        "text": "The state of the progress bar, based on if the time the process takes is known or not.\nDefault options are: `\"determinate\"` (no animation), `\"indeterminate\"` (animate from left to right)."
+        "text": "The state of the progress bar, based on if the time the process takes is known or not.\r\nDefault options are: `\"determinate\"` (no animation), `\"indeterminate\"` (animate from left to right)."
       },
       "attribute": "type",
       "reflect": false,
@@ -102,7 +101,7 @@ export class ProgressBar {
       "optional": false,
       "docs": {
         "tags": [],
-        "text": "The value determines how much of the active bar should display when the\n`type` is `\"determinate\"`.\nThe value should be between [0, 1]."
+        "text": "The value determines how much of the active bar should display when the\r\n`type` is `\"determinate\"`.\r\nThe value should be between [0, 1]."
       },
       "attribute": "value",
       "reflect": false,
@@ -120,7 +119,7 @@ export class ProgressBar {
       "optional": false,
       "docs": {
         "tags": [],
-        "text": "If the buffer and value are smaller than 1, the buffer circles will show.\nThe buffer should be between [0, 1]."
+        "text": "If the buffer and value are smaller than 1, the buffer circles will show.\r\nThe buffer should be between [0, 1]."
       },
       "attribute": "buffer",
       "reflect": false,
@@ -143,7 +142,7 @@ export class ProgressBar {
       "optional": true,
       "docs": {
         "tags": [],
-        "text": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics)."
+        "text": "The color to use from your application's color palette.\r\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\r\nFor more information on colors, see [theming](/docs/theming/basics)."
       },
       "attribute": "color",
       "reflect": false
@@ -158,12 +157,21 @@ const renderIndeterminate = () => {
       h("span", { class: "progress-indeterminate" }))
   ];
 };
-const renderProgress = (value, buffer, reversed) => {
+const renderProgress = (value, buffer) => {
   const finalValue = clamp(0, value, 1);
   const finalBuffer = clamp(0, buffer, 1);
   return [
     h("div", { class: "progress", style: { transform: `scaleX(${finalValue})` } }),
-    finalBuffer !== 1 && h("div", { class: { 'buffer-circles': true, 'buffer-circles-reversed': reversed }, style: { width: `calc(${(1 - finalBuffer) * 100}%)` } }),
+    /**
+     * Buffer circles with two container to move
+     * the circles behind the buffer progress
+     * with respecting the animation.
+     * When finalBuffer === 1, we use display: none
+     * instead of removing the element to avoid flickering.
+     */
+    h("div", { class: { 'buffer-circles-container': true, 'ion-hide': finalBuffer === 1 }, style: { transform: `translateX(${finalBuffer * 100}%)` } },
+      h("div", { class: "buffer-circles-container", style: { transform: `translateX(-${finalBuffer * 100}%)` } },
+        h("div", { class: "buffer-circles" }))),
     h("div", { class: "progress-buffer-bar", style: { transform: `scaleX(${finalBuffer})` } }),
   ];
 };
